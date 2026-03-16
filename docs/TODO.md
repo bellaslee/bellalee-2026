@@ -5,7 +5,7 @@
 - [ ] Finalize top-level information architecture: Home, Resume, Roadmap, Tools, Projects, Notes
 - [ ] Update shared navigation and footer to include all primary sections
 - [ ] Add hover microcopy for the Notes link
-- [ ] Set up base page shells for `/resume`, `/roadmap`, `/tools`, `/projects`, and `/notes`
+- [x] Set up base page shells for `/resume`, `/roadmap`, `/tools`, `/projects`, and `/notes`
 
 ## Homepage
 

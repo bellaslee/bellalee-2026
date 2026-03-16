@@ -9,7 +9,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
     <footer
       className={`flex flex-col gap-4 border-t border-[color:var(--border)] py-8 text-sm text-[var(--primary)] md:flex-row md:items-center md:justify-between ${className}`.trim()}
     >
-      <p>bella@bellalee.com</p>
+      <p>bella(at)bellalee(dot)com</p>
       <div className="flex flex-wrap gap-5">
         <Link href="https://www.linkedin.com/in/bellasylee/">LinkedIn</Link>
       </div>

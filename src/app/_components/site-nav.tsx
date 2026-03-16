@@ -1,15 +1,27 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 type SiteNavProps = {
   className?: string;
 };
 
-const primaryLinks = [
+type PrimaryLink = {
+  href: string;
+  label: string;
+  icon?: 'external';
+};
+
+const primaryLinks: PrimaryLink[] = [
   { href: '/resume', label: 'Resume' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/tools', label: 'Tools' },
   { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'About' },
+  {
+    href: 'https://garden.bellalee.com',
+    label: 'Notes',
+    icon: 'external',
+  },
 ];
 
 export function SiteNav({ className = '' }: SiteNavProps) {
@@ -26,35 +38,24 @@ export function SiteNav({ className = '' }: SiteNavProps) {
 
       <div className="hidden items-center gap-6 text-sm text-[var(--primary)] md:flex">
         {primaryLinks.map((link) => (
-          <Link key={link.href} href={link.href}>
-            {link.label}
+          <Link
+            key={link.href}
+            href={link.href}
+            target={link.icon === 'external' ? '_blank' : undefined}
+            rel={link.icon === 'external' ? 'noreferrer' : undefined}
+          >
+            <span className="inline-flex items-center gap-1">
+              <span>{link.label}</span>
+              {link.icon === 'external' ? (
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  aria-hidden="true"
+                  className="text-[0.72em]"
+                />
+              ) : null}
+            </span>
           </Link>
         ))}
-
-        <Link
-          href="https://garden.bellalee.com"
-          target="_blank"
-          rel="noreferrer"
-          title="Essays, experiments, and unfinished thinking."
-          className="group inline-flex items-center gap-1.5"
-        >
-          Notes
-          <span
-            aria-hidden="true"
-            className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-          >
-            <svg
-              viewBox="0 0 12 12"
-              className="h-3 w-3"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path d="M3 9 9 3" />
-              <path d="M4 3h5v5" />
-            </svg>
-          </span>
-        </Link>
       </div>
     </nav>
   );

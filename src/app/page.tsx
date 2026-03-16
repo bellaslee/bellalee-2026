@@ -365,8 +365,8 @@ export default function Home() {
                   </span>
                 </div>
 
-                <div className="mt-5 grid gap-3">
-                  <div className="rounded-[1.25rem] border border-[color:var(--border)] bg-[var(--surface)]/70 p-4">
+                <div className="mt-5 grid gap-3 md:grid-cols-2">
+                  <div className="md:border-r md:border-[color:var(--border)] md:pr-4">
                     <p className="text-xs uppercase tracking-[0.18em] text-[var(--secondary)]">
                       Current
                     </p>
@@ -375,7 +375,7 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="rounded-[1.25rem] border border-[color:var(--border)] bg-white/80 p-4">
+                  <div className="md:pl-4">
                     <p className="text-xs uppercase tracking-[0.18em] text-[var(--secondary)]">
                       Next
                     </p>
