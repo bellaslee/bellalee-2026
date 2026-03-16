@@ -17,11 +17,9 @@
 
 ## Resume Page
 
-- [ ] Build left sidebar navigation for Experience, Projects, Skills, Education, and Certifications
-- [ ] Create main content panel that updates cleanly as sections change
-- [ ] Write experience entries with achievements, stack tags, and expandable details
-- [ ] Add placeholders for architecture diagrams inside relevant roles/projects
-- [ ] Implement skill/category filters for Frontend, Backend, Infrastructure, and Data
+- [x] Build left sidebar navigation for Experience, Projects, Skills, Education, and Certifications
+- [x] Create main content panel that updates cleanly as sections change
+- [/] Write experience entries with achievements, stack tags, and expandable details
 - [ ] Link projects from resume entries to full case studies
 - [ ] Add a writing/thought-process section that points to Notes and featured essays
 
@@ -33,14 +31,6 @@
 - [ ] Link each roadmap topic to related notes, repos, and demo tools where available
 - [ ] Seed the page with a first batch of real learning topics instead of placeholder text
 
-## Tools Section
-
-- [ ] Design the tools index as a grid of small utilities
-- [ ] Decide which tool to build first
-- [ ] Create detail-page structure for individual tools
-- [ ] Make sure each tool page includes the interface, explanation, and source link
-- [ ] Add placeholder entries for JSON Diff Viewer, Regex Playground, API Response Comparator, and SQL Formatter
-
 ## Projects Section
 
 - [ ] Define a reusable case study template
@@ -48,13 +38,6 @@
 - [ ] Build the featured case study for the current website first
 - [ ] Add room for screenshots and architecture diagrams
 - [ ] Connect project pages back to related tools and roadmap items
-
-## Notes Integration
-
-- [ ] Treat Notes as a first-class section everywhere, not an afterthought
-- [ ] Create the `/notes` handoff page that explains the external notes space
-- [ ] Surface 2-3 featured essays in Resume and/or Home
-- [ ] Add lightweight tags for themes like systems, tooling, and career growth
 
 ## Content + Cross-Linking
 
@@ -65,13 +48,9 @@
 
 ## Visual Design + Polish
 
-- [ ] Apply the porcelain/blue-gray visual direction consistently across pages
-- [ ] Set typography, spacing, borders, and card styles before building too many one-off components
 - [ ] Add subtle motion only where it improves clarity
 - [ ] Make architecture diagrams and visual panels feel intentional, not decorative
 
 ## Stretch
 
-- [ ] Explore a skill graph visualization
 - [ ] Explore global search across projects, tools, roadmap, and notes
-- [ ] Add richer hover/tooltips for external notes links
