@@ -10,7 +10,7 @@ type SurfaceDescriptionTone = 'muted' | 'default';
 type SurfacePanelProps = {
   children: ReactNode;
   className?: string;
-  as?: 'article' | 'div' | 'section';
+  as?: 'article' | 'aside' | 'div' | 'section';
   variant?: SurfaceVariant;
   padding?: SurfacePadding;
 };

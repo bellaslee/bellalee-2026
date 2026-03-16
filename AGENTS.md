@@ -23,9 +23,10 @@
 - Keep route files focused on page composition. Extract reusable UI into
   `src/app/_components` or a nearby route-level component file whenever possible
   for repeated elements.
-- Prefer a three-layer split for substantial pages when it helps clarity:
-  route composition, structured content/data, and small presentational section
-  components.
+- Prefer a three-layer split for substantial pages when it helps clarity: route
+  composition (`<route>/page.tsx`), structured content/data
+  (`<route>/<route-name>.content.ts`), and small presentational section
+  components (`<route>/_components/<route-name>-<section-name>.tsx`).
 - Use TypeScript types for props and structured data. Prefer simple local types
   over overly abstract generics.
 - Match the existing style: clear typography, editorial layouts, rounded cards,
