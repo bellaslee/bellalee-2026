@@ -97,7 +97,7 @@ export default function Home() {
               Bella enjoys bridging the gap between people, process, and
               technology.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[color:rgba(33,53,72,0.78)]">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
               I work at the overlap of technical consulting, product management,
               and system architecture, helping teams turn complexity into clear
               decisions, scalable systems, and products people can actually use.
@@ -179,7 +179,7 @@ export default function Home() {
                     <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--foreground)]">
                       {card.title}
                     </h2>
-                    <p className="mt-5 max-w-xl text-base leading-8 text-[color:rgba(33,53,72,0.78)]">
+                    <p className="mt-5 max-w-xl text-base leading-8 text-[var(--foreground-muted)]">
                       {card.description}
                     </p>
                   </div>
@@ -225,7 +225,7 @@ export default function Home() {
                   <h2 className="mt-3 font-serif text-4xl leading-none text-[var(--foreground)]">
                     {card.title}
                   </h2>
-                  <p className="mt-4 text-base leading-8 text-[color:rgba(33,53,72,0.78)]">
+                  <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
                     {card.description}
                   </p>
                   <div className="mt-6 space-y-2 text-sm text-[var(--foreground)]">
@@ -342,7 +342,7 @@ export default function Home() {
             <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--foreground)]">
               A compact view into the ideas shaping how I work and live.
             </h2>
-            <p className="mt-5 max-w-lg text-base leading-8 text-[color:rgba(33,53,72,0.78)]">
+            <p className="mt-5 max-w-lg text-base leading-8 text-[var(--foreground-muted)]">
               The roadmap shows what I am focused on now, what I want to move
               into next, and how those threads feed future projects, writing,
               and ways of working.

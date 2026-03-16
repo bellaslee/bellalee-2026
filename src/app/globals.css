@@ -3,6 +3,7 @@
 :root {
   --background: #f8f7f3;
   --foreground: #213548;
+  --foreground-muted: #50606e;
   --surface: #f2efe8;
   --surface-muted: rgba(208, 215, 244, 0.38);
   --primary: #1c2985;
