@@ -380,6 +380,55 @@ const certificationItems = [
   },
 ];
 
+function ResumeArrowLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: string;
+}) {
+  const isExternal = href.startsWith('http');
+
+  return (
+    <Link
+      href={href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noreferrer' : undefined}
+      className="inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)]"
+    >
+      {children}
+      <span aria-hidden="true">{'->'}</span>
+    </Link>
+  );
+}
+
+function BulletList({
+  items,
+  tone = 'default',
+}: {
+  items: string[];
+  tone?: 'default' | 'muted';
+}) {
+  const textClassName =
+    tone === 'muted'
+      ? 'text-[var(--foreground-muted)]'
+      : 'text-[var(--foreground)]';
+
+  return (
+    <ul className="mt-3 grid gap-3">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span
+            aria-hidden="true"
+            className="mt-3 h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+          />
+          <span className={`text-base leading-7 ${textClassName}`}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function ResumePage() {
   const [activeSection, setActiveSection] = useState<SectionId>('overview');
   const [expandedRoleId, setExpandedRoleId] = useState<string>('');
@@ -539,16 +588,19 @@ export default function ResumePage() {
                   <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
                     Key strengths
                   </p>
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                     {keyStrengths.map((item) => (
-                      <div key={item} className="flex gap-3">
-                        <span className="mt-3 h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                        <p className="text-base leading-7 text-[var(--foreground)]">
+                      <li key={item} className="flex gap-3">
+                        <span
+                          aria-hidden="true"
+                          className="mt-3 h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+                        />
+                        <span className="text-base leading-7 text-[var(--foreground)]">
                           {item}
-                        </p>
-                      </div>
+                        </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </article>
               </div>
             ) : null}
@@ -622,48 +674,21 @@ export default function ResumePage() {
                               <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
                                 Context
                               </p>
-                              <div className="mt-3 grid gap-3">
-                                {item.context.map((entry) => (
-                                  <p
-                                    key={entry}
-                                    className="text-base leading-7 text-[var(--foreground-muted)]"
-                                  >
-                                    {entry}
-                                  </p>
-                                ))}
-                              </div>
+                              <BulletList items={item.context} tone="muted" />
                             </div>
 
                             <div>
                               <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
                                 Responsibilities
                               </p>
-                              <div className="mt-3 grid gap-3">
-                                {item.responsibilities.map((entry) => (
-                                  <div key={entry} className="flex gap-3">
-                                    <span className="mt-3 h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                                    <p className="text-base leading-7 text-[var(--foreground)]">
-                                      {entry}
-                                    </p>
-                                  </div>
-                                ))}
-                              </div>
+                              <BulletList items={item.responsibilities} />
                             </div>
 
                             <div>
                               <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
                                 Impact highlights
                               </p>
-                              <div className="mt-3 grid gap-3">
-                                {item.impact.map((entry) => (
-                                  <div key={entry} className="flex gap-3">
-                                    <span className="mt-3 h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                                    <p className="text-base leading-7 text-[var(--foreground)]">
-                                      {entry}
-                                    </p>
-                                  </div>
-                                ))}
-                              </div>
+                              <BulletList items={item.impact} />
                             </div>
 
                             <div>
@@ -686,13 +711,9 @@ export default function ResumePage() {
                               </div>
                             </div>
 
-                            <Link
-                              href={item.caseStudyHref}
-                              className="inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)]"
-                            >
+                            <ResumeArrowLink href={item.caseStudyHref}>
                               View related case study
-                              <span aria-hidden="true">{'->'}</span>
-                            </Link>
+                            </ResumeArrowLink>
 
                             <div className="flex justify-end">
                               <button
@@ -771,21 +792,11 @@ export default function ResumePage() {
                           </p>
                         </div>
                       </div>
-                      <Link
-                        href={item.href}
-                        target={
-                          item.href.startsWith('http') ? '_blank' : undefined
-                        }
-                        rel={
-                          item.href.startsWith('http')
-                            ? 'noreferrer'
-                            : undefined
-                        }
-                        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)]"
-                      >
-                        View deep dive
-                        <span aria-hidden="true">{'->'}</span>
-                      </Link>
+                      <div className="mt-6">
+                        <ResumeArrowLink href={item.href}>
+                          View deep dive
+                        </ResumeArrowLink>
+                      </div>
                     </div>
                   </article>
                 ))}
@@ -845,15 +856,11 @@ export default function ResumePage() {
                       <p className="mt-4 text-base leading-7 text-[var(--foreground-muted)]">
                         {item.description}
                       </p>
-                      <Link
-                        href={item.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--primary)]"
-                      >
-                        {item.cta}
-                        <span aria-hidden="true">{'->'}</span>
-                      </Link>
+                      <div className="mt-6">
+                        <ResumeArrowLink href={item.href}>
+                          {item.cta}
+                        </ResumeArrowLink>
+                      </div>
                     </article>
                   ))}
                 </div>

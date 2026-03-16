@@ -23,6 +23,9 @@
 - Keep route files focused on page composition. Extract reusable UI into
   `src/app/_components` or a nearby route-level component file whenever possible
   for repeated elements.
+- Prefer a three-layer split for substantial pages when it helps clarity:
+  route composition, structured content/data, and small presentational section
+  components.
 - Use TypeScript types for props and structured data. Prefer simple local types
   over overly abstract generics.
 - Match the existing style: clear typography, editorial layouts, rounded cards,
@@ -32,6 +35,20 @@
   for external links.
 - Favor accessible markup: semantic sections, descriptive headings, button
   labels, and `aria-*` attributes where interaction needs them.
+- Separate content from styling concerns. Do not store raw Tailwind class
+  strings inside content objects unless there is a strong reason to do so.
+- When shared UI needs visual flexibility, prefer explicit props such as
+  `variant`, `size`, `tone`, or semantic element props like `titleAs` over
+  generic `className`-driven styling APIs.
+- When a route contains repeated card bodies or repeated text structures,
+  extract small presentational subcomponents instead of repeating the interior
+  JSX inline.
+- Keep heading hierarchy intentional: page title as `h1`, section titles as
+  `h2`, and card/item titles as `h3` when nested beneath a section.
+- Use semantic lists for repeated collections of peer items (`ul`/`li`) and
+  description lists for labeled value pairs when appropriate.
+- Mark decorative UI, such as ornamental backgrounds or bullet dots, with
+  `aria-hidden="true"` when they do not convey meaning.
 
 ## Tailwind And CSS Guidance
 
@@ -41,6 +58,8 @@
 - When adding new reusable visual patterns, extend `src/app/globals.css`
   sparingly with small semantic utility classes rather than long custom CSS
   blocks.
+- Keep styling decisions inside presentational components where possible so data
+  modules can stay content-focused and reusable.
 - Keep animations subtle and intentional; follow the current aesthetic instead
   of introducing generic motion.
 - Do not add a legacy `tailwind.config.*` unless the project truly needs it.
@@ -81,6 +100,8 @@
   complete the task safely.
   - Verify no new client boundaries were introduced unnecessarily.
 - Confirm new components follow existing typography + spacing patterns.
+- Confirm route files remain mostly compositional and are not carrying repeated
+  card internals or style-heavy content objects.
 - Ensure accessibility labels exist for interactive elements.
 
 ## Content Philosophy
