@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f7f3;
+  --foreground: #213548;
+  --surface: #f2efe8;
+  --surface-muted: rgba(208, 215, 244, 0.38);
+  --primary: #1c2985;
+  --secondary: #707ab3;
+  --accent: #b9b1a3;
+  --border: rgba(28, 41, 133, 0.18);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+body::selection {
+  background: rgba(28, 41, 133, 0.22);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), serif;
+}
+
+.site-shell {
+  background:
+    radial-gradient(circle at top left, rgba(208, 215, 244, 0.68), transparent 34%),
+    radial-gradient(circle at top right, rgba(185, 177, 163, 0.22), transparent 28%),
+    linear-gradient(180deg, #f8f7f3 0%, #f4f1ea 100%);
+}
+
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.45), transparent 45%);
+  pointer-events: none;
+}
+
+.ornament {
+  background-image:
+    linear-gradient(to right, rgba(185, 177, 163, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 177, 163, 0.45) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
