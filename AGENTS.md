@@ -1,18 +1,11 @@
 # AGENTS.md
 
-## Project Overview
+## Architecture Summary
 
-- Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4.
-- Styling is driven through
-  [`src/app/globals.css`](/Users/bella/Developer/bellalee/bellalee-2026/src/app/globals.css)
-  using Tailwind v4's `@import "tailwindcss"` flow plus project CSS variables.
-- App routes live under
-  [`src/app`](/Users/bella/Developer/bellalee/bellalee-2026/src/app).
-- Shared UI currently lives in
-  [`src/app/_components`](/Users/bella/Developer/bellalee/bellalee-2026/src/app/_components).
-- Fonts are configured in
-  [`src/app/layout.tsx`](/Users/bella/Developer/bellalee/bellalee-2026/src/app/layout.tsx)
-  with `next/font`.
+- Next.js App Router project using Server Components by default.
+- Styling uses Tailwind v4 CSS-first setup via `src/app/globals.css`.
+- Design system is driven by CSS variables and editorial layout patterns.
+- Shared UI is intentionally co-located under `app/_components`.
 
 ## Commands
 
@@ -45,8 +38,7 @@
 - Prefer Tailwind utility classes in JSX for layout, spacing, and state styling.
 - Reuse the design tokens already defined in `:root` and `@theme inline` inside
   `globals.css`.
-- When adding new reusable visual patterns, extend
-  [`src/app/globals.css`](/Users/bella/Developer/bellalee/bellalee-2026/src/app/globals.css)
+- When adding new reusable visual patterns, extend `src/app/globals.css`
   sparingly with small semantic utility classes rather than long custom CSS
   blocks.
 - Keep animations subtle and intentional; follow the current aesthetic instead
@@ -62,6 +54,22 @@
   MDX, define where content files live and how shared MDX components are
   registered.
 
+## State Management
+
+- Prefer URL state, server state, or local component state.
+- Do not introduce global state libraries without explicit task requirement.
+
+## Performance Expectations
+
+- Avoid large client component trees.
+- Prefer static rendering where possible.
+- Be mindful of bundle size when adding libraries.
+
+## SEO and Metadata
+
+- Each route should export `generateMetadata` when meaningful.
+- Prefer descriptive titles and concise social preview descriptions.
+
 ## Change Checklist
 
 - Run `npm run lint` after meaningful code changes.
@@ -71,3 +79,18 @@
   unless the task explicitly asks for it.
 - Keep edits focused. Avoid broad refactors unless they are necessary to
   complete the task safely.
+  - Verify no new client boundaries were introduced unnecessarily.
+- Confirm new components follow existing typography + spacing patterns.
+- Ensure accessibility labels exist for interactive elements.
+
+## Content Philosophy
+
+- Content tone should remain thoughtful, minimal, and non-corporate.
+- Avoid marketing-heavy UI patterns.
+- Prefer long-form single pages with sections unless navigation clarity requires
+  a new route.
+
+## Animation
+
+- Prefer opacity, translate, and blur transitions.
+- Avoid spring physics or playful motion styles.
