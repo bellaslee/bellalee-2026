@@ -113,12 +113,11 @@ Avoid sensitive details. Focus on:
 
 ### Skill Clusters (not long keyword lists)
 
-**Systems & Architecture**
-- event-driven patterns  
-- service boundaries  
-- scalability tradeoffs  
+**Industries**
+- legal
+- financial services
 
-**Engineering Practice**
+**Technical**
 - API design  
 - debugging complex systems  
 - onboarding into legacy codebases  
@@ -127,13 +126,6 @@ Avoid sensitive details. Focus on:
 - technical storytelling  
 - aligning stakeholders  
 - mentoring  
-
-Each cluster may include a depth indicator such as:
-- Exposure  
-- Skill Building  
-- Real-World Use  
-- Systems Thinking  
-- Mentorship  
 
 ---
 
@@ -171,23 +163,3 @@ Include:
 - Case study links open dedicated deep-dive pages.
 - External writing links open in a new tab.
 - Maintain generous whitespace and restrained borders.
-
----
-
-## Visual Tone
-
-- Porcelain-light background
-- Deep ink heading color
-- Thin blue-gray dividers
-- Serif headings + clean sans body text
-- Minimal shadows, subtle card framing
-
----
-
-## Key Outcome
-
-A resume page that allows visitors to quickly understand:
-- what you’ve worked on
-- how you think
-- where you are growing
-- the level of complexity you can handle

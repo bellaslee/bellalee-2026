@@ -72,3 +72,15 @@ a {
     linear-gradient(to bottom, rgba(185, 177, 163, 0.45) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+@keyframes fadePanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

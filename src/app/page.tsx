@@ -36,7 +36,7 @@ export default function Home() {
       description:
         'A living notebook of technical explorations, reflections, and unfinished thinking that connects the work behind the work.',
       items: [
-        'Book logs and essays',
+        'Essays and book logs',
         'Rough notes',
         'In-progress reflections on work and learning',
       ],

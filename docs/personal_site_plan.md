@@ -15,9 +15,9 @@ progress (notes / digital garden)
 Top Navigation:
 
 - Home
+- About
 - Resume
 - Roadmap
-- Tools
 - Projects
 - Notes
 
@@ -33,7 +33,7 @@ Navigation behavior:
 
 Suggested URL structure:
 
-/ /resume /roadmap /tools /projects /notes
+/ /about /resume /roadmap /projects /notes
 
 Alternative naming options, depending on tone:
 
@@ -49,13 +49,27 @@ Preferred naming direction: `Notes` or `Field Notes`
 
 ### Hero Section
 
-- Name + role
-- Short one‑line value statement
-- Current technical interests
+- Left column:
+  - Eyebrow role label: `Technical Consultant`
+  - Large value statement centered on bridging people, process, and technology
+  - Short intro paragraph covering technical consulting, product management, and
+    system architecture
 - Primary call‑to‑action buttons:
   - View Resume
-  - See Projects
-  - Explore Tools
+  - Explore Projects
+- Right column:
+  - `Currently Exploring` feature panel
+  - Headline focused on reusable AI workflows
+  - Two supporting callouts for `Focus` and `Approach`
+
+### Identity Strip
+
+Use a slim horizontal strip below the hero with four current positioning themes:
+
+- Technical consulting
+- Product management
+- System architecture
+- Learning in public
 
 ### Featured Cards
 
@@ -63,10 +77,23 @@ Display three primary entry points:
 
 - Interactive Resume
 - Learning Roadmap
-- Notes
+- Working Notes
 
-Use the notes card in place of a developer tools card on the homepage so the
-garden is integrated directly into the main story of the site.
+Layout direction:
+
+- Large left card for the resume
+- Two stacked right cards for roadmap and notes
+
+Each card should include:
+
+- A short label
+- A clear headline
+- One descriptive paragraph
+- A compact list of what visitors will find
+- A simple arrow-based CTA
+
+Use the notes card on the homepage so the garden is integrated directly into the
+main story of the site.
 
 These three should work together as a coherent story:
 
@@ -74,10 +101,23 @@ These three should work together as a coherent story:
 - Notes = how you think
 - Projects = what you build
 
-### Featured Project
+### Current Learning Preview
 
-Highlight one strong technical project including: - Screenshot - Short
-description - Tech stack - Link to case study
+Use the homepage learning section as a compact snapshot of current interests.
+
+Section structure:
+
+- Intro copy explaining that the roadmap shapes projects, writing, and ways of
+  working
+- A list of learning cards linking to the roadmap page
+
+Each learning card should include:
+
+- Topic title
+- Category tag
+- `Current` state
+- `Next` step
+- CTA language pointing to notes and demos
 
 ---
 
@@ -115,7 +155,7 @@ Include:
 
 - Link to notes / digital garden
 - Two to three featured essays
-- Lightweight tags such as systems, tooling, career growth
+- Lightweight tags such as systems, architecture, career growth
 
 This section should position the notes as evidence of curiosity, communication
 ability, and senior-leaning thinking rather than as casual blogging.
@@ -130,7 +170,7 @@ Purpose: act as a public engineering notebook.
 
 - Distributed Systems
 - Programming Languages
-- Developer Tools
+- Applied Systems
 - Research Topics
 
 ### Roadmap Items
@@ -144,17 +184,7 @@ Show learning progress chronologically.
 
 ### Learning Artifacts
 
-Each roadmap topic links to: - Notes - Demo tools - Code repositories
-
----
-
-## Developer Tools Section
-
-Grid layout listing small utilities such as: - JSON Diff Viewer - Regex
-Playground - API Response Comparator - SQL Formatter
-
-Each tool page includes: - Tool interface - Explanation of engineering concepts
-demonstrated - Link to source code
+Each roadmap topic links to: - Notes - Related projects - Code repositories
 
 ---
 
@@ -163,29 +193,14 @@ demonstrated - Link to source code
 Each project should be structured as a case study:
 
 - Problem
-- Constraints
-- Architecture
-- Implementation
+- Executive Summary
+- Context
+- Tools
+- Methodology
+- Key Findings
 - Lessons Learned
 
 Architecture diagrams should visually show system flow.
-
----
-
-## Cross‑Linking Strategy
-
-Connect all sections to create a knowledge graph:
-
-- Resume → Project deep dive
-- Roadmap → Tool demo
-- Project → Supporting utilities
-- Tools → Learning topics
-- Resume → Featured essays or notes
-- Homepage notes card → External notes site
-- Roadmap topics → Related notes and experiments
-
-The notes should feel integrated into the knowledge graph, not visually or
-structurally isolated.
 
 ---
 
@@ -201,17 +216,11 @@ Hosting: - Vercel
 
 ## Optional Advanced Features
 
-- Skill graph visualization
 - Global search across content
-- Rich hover tooltips for external notes links
 
 ## Footer Reinforcement
 
-Include notes in the footer navigation for lightweight discoverability:
+Keep the footer lightweight and personal:
 
-- Notes
-- Projects
-- GitHub
+- Email
 - LinkedIn
-
-This creates a secondary discovery path for visitors who scroll quickly.
