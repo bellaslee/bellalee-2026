@@ -139,7 +139,7 @@ function ResumeSectionPanel({
 function OverviewSection() {
   return (
     <div className="mt-8 space-y-8">
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {overviewStats.map((item) => (
           <SurfacePanel
             key={item.label}

@@ -71,10 +71,6 @@ export const overviewStats = [
     label: 'Current learning focus',
     value: 'Architecture, Salesforce, AI workflows',
   },
-  {
-    label: 'Work style',
-    value: 'Structured, documentation-focused, cross-functional',
-  },
 ];
 
 export const keyStrengths = [
