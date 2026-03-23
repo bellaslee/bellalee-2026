@@ -24,14 +24,9 @@ export type LearningTopic = {
 
 export const homeActions: HomeAction[] = [
   {
-    href: '/resume',
-    label: 'View Resume',
+    href: 'https://github.com/bellaslee/bellalee-2026',
+    label: 'Follow the Dev Journey',
     variant: 'primary',
-  },
-  {
-    href: '/projects',
-    label: 'Explore Projects',
-    variant: 'secondary',
   },
 ];
 
@@ -118,8 +113,7 @@ export const learningTopics: LearningTopic[] = [
   {
     title: 'Bread-Baking',
     tag: 'Craft',
-    current:
-      'Practicing technique through repeat bakes and better dough feel.',
+    current: 'Practicing technique through repeat bakes and better dough feel.',
     next: 'Refine consistency and document the recipes worth keeping.',
   },
 ];

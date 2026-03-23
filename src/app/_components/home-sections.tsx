@@ -95,18 +95,18 @@ export function HomeHeroSection() {
               Currently Exploring
             </p>
             <h2 className="mt-3 font-serif text-4xl leading-tight text-[var(--foreground)]">
-              Creating reusable AI workflows.
+              Revamping my personal website.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <HeroDetail
               title="Focus"
-              body="Experimenting with AI workflows to create repeatable and effective frameworks."
+              body='Making it more "me" while experimenting with new designs and workflows.'
               surface="surface"
             />
             <HeroDetail
               title="Approach"
-              body="Process and product-minded problem solving, future-state considerations, and documentation that keeps ideas visible."
+              body="Iterative development, adding a balanced mix of professional and personal content."
               surface="white"
             />
           </div>
