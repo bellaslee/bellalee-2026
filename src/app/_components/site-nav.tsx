@@ -21,6 +21,7 @@ const primaryLinks: PrimaryLink[] = [
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/tools', label: 'Tools' },
   { href: '/projects', label: 'Projects' },
+  { href: '/photos', label: 'Photos' },
   {
     href: 'https://garden.bellalee.com',
     label: 'Notes',
