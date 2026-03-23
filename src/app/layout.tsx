@@ -14,9 +14,9 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Bella Lee | Software Engineer",
+  title: "Bella Lee",
   description:
-    "Personal site for Bella Lee featuring projects, an interactive resume, learning roadmap, and developer tools.",
+    "Personal site for Bella Lee featuring projects, an interactive resume, and learning roadmap.",
 };
 
 export default function RootLayout({
