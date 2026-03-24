@@ -25,7 +25,7 @@ export type LearningTopic = {
 export const homeActions: HomeAction[] = [
   {
     href: 'https://github.com/bellaslee/bellalee-2026',
-    label: 'Follow the Dev Journey',
+    label: 'Github',
     variant: 'primary',
   },
 ];
