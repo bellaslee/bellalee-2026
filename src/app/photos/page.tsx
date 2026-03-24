@@ -15,10 +15,8 @@ export default function PhotosPage() {
     <SitePage footerClassName="mt-8">
       <PageIntro
         eyebrow="Photo Diary"
-        title="Landscape frames arranged like pages in a moving stack."
-        description="A quiet place for photographs that are mostly composed in a 16:9 landscape format. As you move down the page, each image settles over the last one instead of filing away into a standard grid."
-        asideEyebrow="Format"
-        asideDescription="Built for local images and minimal notes, with room to swap in future photographs without changing the component structure."
+        title="The most beautiful moment in life."
+        description="I like capturing photos on my digital camera that emphasize the weight of a place and a moment."
       />
 
       <PhotoStack photos={photoEntries} />

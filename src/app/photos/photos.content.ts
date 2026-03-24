@@ -1,47 +1,92 @@
 export type PhotoEntry = {
   src: string;
-  alt: string;
   title: string;
   date: string;
-  locationOrCaption: string;
+  caption: string;
   width: number;
   height: number;
 };
 
 export const photoEntries: PhotoEntry[] = [
   {
-    src: '/photos/tide-study.svg',
-    alt: 'Abstract seascape with low tide blues and warm horizon light.',
-    title: 'Tide Study',
-    date: 'March 2026',
-    locationOrCaption: 'A quiet horizon and a little room to breathe.',
+    src: '/photos/rainy-home.JPG',
+    title: 'Rainy Day',
+    date: 'August 2025',
+    caption: 'Kaohsiung, Taiwan. My favorite view.',
     width: 1600,
     height: 900,
   },
   {
-    src: '/photos/cedar-silence.svg',
-    alt: 'Abstract mountain landscape with cedar-toned foothills and pale mist.',
-    title: 'Cedar Silence',
-    date: 'February 2026',
-    locationOrCaption: 'Cloud cover softening the edges of the afternoon.',
+    src: '/photos/iron-transfusion.JPG',
+    title: 'Fred Hutch',
+    date: 'July 2025',
+    caption: 'Fred Hutch Cancer Center, Seattle, Washington.',
     width: 1600,
     height: 900,
   },
   {
-    src: '/photos/night-ridge.svg',
-    alt: 'Abstract twilight ridge with a deep blue sky and illuminated horizon.',
-    title: 'Night Ridge',
-    date: 'January 2026',
-    locationOrCaption: 'The last line of light before everything turns indigo.',
+    src: '/photos/bacchae.JPG',
+    title: 'Bacchae',
+    date: 'June 2025',
+    caption: 'Getty Center, Los Angeles, California.',
     width: 1600,
     height: 900,
   },
   {
-    src: '/photos/field-notes.svg',
-    alt: 'Abstract golden field landscape with a soft sky and distant tree line.',
-    title: 'Field Notes',
-    date: 'December 2025',
-    locationOrCaption: 'A long landscape frame for the kind of stillness I return to.',
+    src: '/photos/san-diego.JPG',
+    title: 'Beach',
+    date: 'June 2025',
+    caption:
+      'Del Mar Beach, San Diego, California. A nostalgic place from childhood.',
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/balboa.JPG',
+    title: 'Balboa Park',
+    date: 'June 2025',
+    caption: 'Balboa Park, San Diego, California.',
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/grandmas-window.JPG',
+    title: "Grandma's Window",
+    date: 'March 2025',
+    caption: "Grandma's, Irvine, California.",
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/outside-grandmas.JPG',
+    title: "Grandma's Neighborhood",
+    date: 'March 2025',
+    caption: "Grandma's, Irvine, California.",
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/pioneer-square.JPG',
+    title: 'Pioneer Square, Seattle, Washington.',
+    date: 'March 2025',
+    caption: "Grandma's, Irvine, California.",
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/taiwan-street.JPG',
+    title: 'Street Corner',
+    date: 'September 2024',
+    caption: 'Kaohsiung, Taiwan.',
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/photos/plane-window.JPG',
+    title: 'Going Home',
+    date: 'August 2024',
+    caption:
+      'Landing in Taoyuan, Taiwan, after a 12 hour flight home.',
     width: 1600,
     height: 900,
   },
