@@ -20,6 +20,7 @@ const primaryLinks: PrimaryLink[] = [
   { href: '/resume', label: 'Resume' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/projects', label: 'Projects' },
+  { href: '/art', label: 'Art' },
   { href: '/photos', label: 'Photos' },
   {
     href: 'https://garden.bellalee.com',

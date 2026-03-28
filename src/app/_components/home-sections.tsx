@@ -67,9 +67,6 @@ export function HomeHeroSection() {
   return (
     <section className="grid gap-10 pb-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-16">
       <div className="max-w-3xl">
-        <p className="mb-5 text-sm uppercase tracking-[0.28em] text-[var(--primary)]">
-          Technical Consultant
-        </p>
         <h1 className="font-serif text-6xl leading-none text-[var(--foreground)] sm:text-7xl lg:text-[5rem]">
           Bella enjoys bridging the gap between people, process, and technology.
         </h1>
