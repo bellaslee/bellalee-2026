@@ -18,26 +18,26 @@ export function ResumeCaseStudiesSection() {
             <div className="mt-5 space-y-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
-                  Problem
+                  Context
                 </p>
                 <p className="mt-2 text-base leading-7 text-[var(--foreground-muted)]">
-                  {item.problem}
+                  {item.context}
                 </p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
-                  Constraints
+                  Approach
                 </p>
                 <p className="mt-2 text-base leading-7 text-[var(--foreground-muted)]">
-                  {item.constraints}
+                  {item.approach}
                 </p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
-                  Role
+                  Outcome
                 </p>
                 <p className="mt-2 text-base leading-7 text-[var(--foreground)]">
-                  {item.role}
+                  {item.outcome}
                 </p>
               </div>
             </div>

@@ -46,17 +46,17 @@ export const homeHeroContent: HomeHeroContent = {
   title: "Hi, I'm Bella!",
   description:
     'I am a consultant, artist, writer, and lifelong learner. This site is a place for the projects, photos, and ongoing learning that matter to me.',
-  currentlyExploringLabel: 'Currently Exploring',
-  currentlyExploringTitle: 'Creating reusable AI workflows.',
+  currentlyExploringLabel: 'Currently Working On',
+  currentlyExploringTitle: 'Adding more personality to this website',
   details: [
     {
-      title: 'Focus',
-      body: 'Experimenting with AI workflows to create repeatable and effective frameworks.',
+      title: 'Context',
+      body: "I've got the rough framework down, but I think it still feels too ordinary.",
       surface: 'surface',
     },
     {
       title: 'Approach',
-      body: 'Process and product-minded problem solving, future-state considerations, and documentation that keeps ideas visible.',
+      body: 'Creating doodles that appear as you scroll down the page.',
       surface: 'white',
     },
   ],
@@ -94,8 +94,7 @@ export const learningTopicsSectionContent: SectionHeadingContent = {
 export const featureCards: HomeFeature[] = [
   {
     title: 'Interactive Resume',
-    description:
-      'A structured view of consulting work, cross-functional delivery, and the technical decisions behind each engagement.',
+    description: 'A structured view of the work I do.',
     items: ['Experience', 'Engagement highlights'],
     href: '/resume',
     eyebrow: 'Featured Path',

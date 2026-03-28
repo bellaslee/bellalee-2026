@@ -23,9 +23,6 @@ export function ResumeSectionPanel({
     >
       <div className="flex flex-col gap-6 border-b border-[color:var(--border)] pb-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
-            Section {currentIndex + 1}
-          </p>
           <h2 className="mt-3 font-serif text-4xl leading-none text-[var(--foreground)] sm:text-5xl">
             {activeItem.label}
           </h2>

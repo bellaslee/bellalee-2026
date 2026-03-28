@@ -27,9 +27,9 @@ export type EducationItem = {
 
 export type CaseStudyItem = {
   title: string;
-  problem: string;
-  constraints: string;
-  role: string;
+  context: string;
+  approach: string;
+  outcome: string;
   href: string;
 };
 
@@ -47,7 +47,7 @@ export const navItems: NavItem[] = [
   {
     id: 'case-studies',
     label: 'Case Studies',
-    summary: 'Selected project snapshots with framing, constraints, and role.',
+    summary: 'Selected project snapshots with context, approach, and outcome.',
   },
   {
     id: 'education-skills',
@@ -72,7 +72,7 @@ export const experienceItems: ExperienceItem[] = [
     role: 'Technology Consultant',
     period: 'Sep. 2025 - Present',
     summary:
-      'Supports consulting work across product requirements, AI workflow planning, and delivery coordination for client engagements.',
+      'Support consulting work across product requirements, AI workflow planning, and delivery coordination for client engagements.',
     contributions: [
       'Author 100+ product and system requirements that determine roadmap scope, engineering estimates, and release sequencing for post-merger legal CRM vendor selection and implementation',
       'Define financial services use cases for Agentforce, translate business requirements into AI workflows, and own product documentation to support go-to-market AI enablement strategy, reducing deployment time by 25%',
@@ -168,22 +168,12 @@ export const experienceSkillFilters = Array.from(
 
 export const caseStudies: CaseStudyItem[] = [
   {
-    title: 'Interactive Resume Experience',
-    problem:
-      'Present resume material in a format that reveals thought process instead of flattening everything into a PDF.',
-    constraints:
-      'Needed to stay concise, visually calm, and structured enough to support quick scanning.',
-    role: 'Owned the information architecture, interaction model, and presentation choices.',
-    href: '/resume',
-  },
-  {
-    title: 'Learning Roadmap System',
-    problem:
-      'Connect long-term learning goals to visible milestones so growth areas do not stay vague or aspirational.',
-    constraints:
-      'The structure had to support multiple parallel tracks without turning into a backlog graveyard.',
-    role: 'Defined the planning structure and tied it to concrete career themes like architecture and platform fluency.',
-    href: '/roadmap',
+    title: 'Personal Website',
+    context:
+      'Wanted to revamp my website to better reflect my taste and personality.',
+    approach: 'Applying what I learned at work to a personal project.',
+    outcome: 'This website!',
+    href: '',
   },
 ];
 

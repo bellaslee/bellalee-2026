@@ -8,8 +8,6 @@ export default function ProjectsPage() {
         eyebrow="Projects"
         title="Project case studies are on the way."
         description="This page will hold deeper writeups on selected work, including problem framing, tradeoffs, implementation decisions, and what was learned along the way."
-        asideEyebrow="Status"
-        asideDescription="Placeholder page for upcoming project deep dives."
       />
 
       <section className="py-10">
