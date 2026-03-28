@@ -35,8 +35,12 @@ export default function AboutPage() {
             key={section.title}
             as="article"
             variant={aboutSectionVariants[index % aboutSectionVariants.length]}
-            className="ornament"
+            className="relative"
           >
+            <div
+              className="ornament absolute inset-0 opacity-25"
+              aria-hidden="true"
+            />
             <h2 className="font-serif text-4xl leading-none text-[var(--foreground)]">
               {section.title}
             </h2>
