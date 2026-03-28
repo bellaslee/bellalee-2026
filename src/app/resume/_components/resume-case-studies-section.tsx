@@ -4,7 +4,7 @@ import { ResumeArrowLink } from './resume-arrow-link';
 
 export function ResumeCaseStudiesSection() {
   return (
-    <div className="mt-8 grid gap-5 xl:grid-cols-3">
+    <div className="mt-8 grid gap-5 xl:grid-cols-2">
       {caseStudies.map((item) => (
         <SurfacePanel
           key={item.title}

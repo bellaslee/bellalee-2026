@@ -1,5 +1,5 @@
 import { SurfacePanel } from '../../_components/surface-panel';
-import { certificationItems, educationItems } from '../resume.content';
+import { educationItems, skillGroups } from '../resume.content';
 
 export function ResumeEducationSection() {
   return (
@@ -15,23 +15,30 @@ export function ResumeEducationSection() {
               <h3 className="font-serif text-3xl leading-none text-[var(--foreground)]">
                 {item.title}
               </h3>
-              <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
-                {item.institution}
-              </p>
+              {item.period ? (
+                <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
+                  {item.period}
+                </p>
+              ) : null}
             </div>
             <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
-              {item.detail}
+              {item.institution}
             </p>
+            {item.detail ? (
+              <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
+                {item.detail}
+              </p>
+            ) : null}
           </SurfacePanel>
         ))}
       </div>
 
       <SurfacePanel as="aside" variant="white" className="rounded-[1.75rem]">
         <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
-          Certifications and milestones
+          Skills
         </p>
         <div className="mt-5 grid gap-4">
-          {certificationItems.map((item) => (
+          {skillGroups.map((item) => (
             <div
               key={item.title}
               className="rounded-[1.25rem] border border-[color:var(--border)] bg-[var(--surface)]/70 p-4"
@@ -39,8 +46,8 @@ export function ResumeEducationSection() {
               <p className="text-sm font-medium text-[var(--foreground)]">
                 {item.title}
               </p>
-              <p className="mt-2 text-sm text-[var(--foreground-muted)]">
-                {item.status}
+              <p className="mt-2 text-sm leading-6 text-[var(--foreground-muted)]">
+                {item.items.join(', ')}
               </p>
             </div>
           ))}

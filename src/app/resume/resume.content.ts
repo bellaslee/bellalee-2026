@@ -1,7 +1,7 @@
 export type SectionId =
   | 'experience'
   | 'case-studies'
-  | 'education-certifications';
+  | 'education-skills';
 
 export type NavItem = {
   id: SectionId;
@@ -12,14 +12,19 @@ export type NavItem = {
 export type ExperienceItem = {
   id: string;
   company: string;
+  location: string;
   role: string;
   period: string;
-  scope: string;
-  context: string[];
-  responsibilities: string[];
-  impact: string[];
+  contributions: string[];
   skills: string[];
-  caseStudyHref: string;
+  caseStudyHref?: string;
+};
+
+export type EducationItem = {
+  title: string;
+  institution: string;
+  period: string;
+  detail?: string;
 };
 
 export type CaseStudyItem = {
@@ -30,205 +35,138 @@ export type CaseStudyItem = {
   href: string;
 };
 
-export type EducationItem = {
+export type SkillGroup = {
   title: string;
-  institution: string;
-  detail: string;
-};
-
-export type CertificationItem = {
-  title: string;
-  status: string;
+  items: string[];
 };
 
 export const navItems: NavItem[] = [
   {
     id: 'experience',
     label: 'Experience',
-    summary: 'Expandable role cards with impact and skill signals.',
+    summary: 'Role history with exact contribution bullets and skill signals.',
   },
   {
     id: 'case-studies',
     label: 'Case Studies',
-    summary: 'Problem framing, tradeoffs, and delivery examples.',
+    summary: 'Selected project snapshots with framing, constraints, and role.',
   },
   {
-    id: 'education-certifications',
-    label: 'Education & Certifications',
-    summary: 'Academic background and structured learning milestones.',
+    id: 'education-skills',
+    label: 'Education & Skills',
+    summary: 'Degree details, relevant coursework, and resume skill categories.',
   },
 ];
+
+export const resumeHero = {
+  title: 'Bella Lee',
+  location: 'Seattle, WA 98105',
+  contactLine: '(206) 802-5518 | bella@bellalee.com',
+  linkLabel: 'linkedin.com/in/bellasylee',
+  linkHref: 'https://linkedin.com/in/bellasylee',
+  role: 'Product-focused analyst',
+  summary:
+    'Product-focused analyst experienced in requirements definition, workflow optimization, and system implementation. Skilled at translating business needs into executable documentation and process improvements that improve delivery clarity.',
+};
 
 export const experienceItems: ExperienceItem[] = [
   {
     id: 'west-monroe-consultant',
     company: 'West Monroe',
+    location: 'Seattle, WA',
     role: 'Technology Consultant',
     period: 'Sep. 2025 - Present',
-    scope:
-      'Drive product definition, roadmap shaping, AI workflow design, and executive decision support across consulting engagements in legal and financial services contexts.',
-    context: [
-      'Supporting post-merger legal CRM vendor selection and implementation work where product, systems, and operational decisions are tightly connected.',
-      'Working across business stakeholders, delivery teams, and go-to-market priorities in environments that require both strategic clarity and execution detail.',
-    ],
-    responsibilities: [
-      'Author 100+ product and system requirements that determine roadmap scope, engineering estimates, and release sequencing.',
-      'Define financial services use cases for Agentforce, translate business requirements into AI workflows, and own supporting product documentation.',
-    ],
-    impact: [
-      'Reduced deployment time by 25% through AI enablement documentation and workflow definition.',
-      'Produce executive decision decks and reports that drive approval of vendor selection, roadmap, and process decisions.',
-      'Maintain backlogs, delivery plans, and RAID logs, improving deliverable turnaround time by 10% across the engagement team.',
+    contributions: [
+      'Author 100+ product and system requirements that determine roadmap scope, engineering estimates, and release sequencing for post-merger legal CRM vendor selection and implementation',
+      'Define financial services use cases for Agentforce, translate business requirements into AI workflows, and own product documentation to support go-to-market AI enablement strategy, reducing deployment time by 25%',
+      'Produce executive decision decks and reports that drive approval of vendor selection, roadmap, and process decisions',
+      'Maintain backlogs, delivery plans, and RAID logs, improving deliverable turnaround time by 10% across the engagement team',
     ],
     skills: [
-      'product requirements',
-      'roadmap planning',
-      'AI workflows',
-      'enterprise constraints',
-      'executive communication',
+      'Salesforce',
+      'AI enablement',
+      'product management',
+      'management consulting'
     ],
-    caseStudyHref: '/projects',
   },
   {
     id: 'uw-it',
     company: 'UW Information Technology',
+    location: 'Seattle, WA',
     role: 'Brand Strategy & Marketing Analyst',
     period: 'Oct. 2023 - Jun. 2024; Aug. 2024 - Jun. 2025',
-    scope:
-      'Led communications operations and content strategy work spanning workflow design, information architecture, and digital performance reporting.',
-    context: [
-      'Worked inside a university technology organization where communications needed to serve a broader institutional ecosystem.',
-      'Balanced stakeholder needs, analytics, and usability concerns across a large public-facing web presence.',
-    ],
-    responsibilities: [
-      'Led the initiative to integrate UW-IT’s LinkedIn into the broader communications ecosystem by standardizing team workflows.',
-      'Reorganized information architecture and content across 100+ WordPress pages using stakeholder input and analytics.',
-    ],
-    impact: [
-      'Improved accessibility, navigation, and engagement across the site experience.',
-      'Analyzed digital engagement metrics to produce monthly reports that informed content prioritization and communications planning.',
-      'Created more consistent communication practices across channels and team processes.',
+    contributions: [
+      'Led initiative to integrate UW-IT’s LinkedIn into the broader communications ecosystem by standardizing team workflows',
+      'Reorganized information architecture and content across 100+ WordPress pages using stakeholder input and analytics to improve accessibility, navigation, and engagement',
+      'Analyzed digital engagement metrics to produce monthly reports that informed content prioritization and communications planning',
     ],
     skills: [
-      'technical storytelling',
       'information architecture',
-      'analytics',
-      'cross-functional alignment',
-      'workflow design',
+      'data analysis',
     ],
-    caseStudyHref: '/projects',
   },
   {
     id: 'smirk-president',
     company: 'Smirk UW',
+    location: 'Seattle, WA',
     role: 'President',
     period: 'May 2023 - Nov. 2024',
-    scope:
-      'Led a student-run organization through governance, revenue, campaign, and team operations work while scaling structure for continuity.',
-    context: [
-      'Oversaw a 7-person organization with responsibilities spanning content, design, operations, and leadership succession.',
-      'Built on earlier roles as Chief Design Officer and Graphic Designer to move from execution into organization-wide leadership.',
-    ],
-    responsibilities: [
-      'Wrote governance framework and bylaws enabling leadership succession and scalable operations.',
-      'Led a cross-functional team using structured agendas, documentation, and role clarity to support content and design operations.',
-    ],
-    impact: [
-      'Directed data-informed campaigns that generated $4,750 per year in ad revenue and increased engagement by 15%.',
-      'Created operating structure that made leadership transitions and team coordination more sustainable.',
-      'Established design standards and workflows that improved consistency and execution across the team.',
+    contributions: [
+      'Wrote governance framework and bylaws enabling leadership succession and scalable operations for a 7-person organization',
+      'Directed data-informed campaigns that generated $4,750/year in ad revenue and increased engagement by 15%',
+      'Led cross-functional team overseeing content and design operations using structured agendas, documentation, and role clarity',
+      'Designed campaign visuals and digital content for Instagram, contributing to measurable engagement growth',
+      'Established design standards and workflows that improved consistency and execution across the team',
     ],
     skills: [
-      'leadership',
-      'governance',
-      'campaign strategy',
-      'technical storytelling',
+      'leadership'
     ],
-    caseStudyHref: '/projects',
   },
   {
     id: 'west-monroe-intern',
     company: 'West Monroe',
+    location: 'Seattle, WA',
     role: 'Technology Consulting Intern',
     period: 'Jun. 2024 - Aug. 2024',
-    scope:
-      'Built onboarding assets and Salesforce workflow improvements that supported private-bank servicing and implementation consistency.',
-    context: [
-      'Worked in a financial-services consulting setting with a strong focus on enablement, process clarity, and scalable platform behavior.',
-      'Contributed across documentation, UAT synthesis, and Salesforce solution configuration.',
-    ],
-    responsibilities: [
-      'Created 7 job aids by synthesizing documentation and UAT insights to improve onboarding clarity.',
-      'Built Salesforce automations using Flows, OmniStudio, OmniScripts, LWC, object customization, and Experience Cloud.',
-    ],
-    impact: [
-      'Reduced support overhead by making onboarding guidance easier to use and easier to trust.',
-      'Improved process consistency for private-bank onboarding and servicing workflows.',
-      'Strengthened implementation support through clear enablement materials and platform configuration.',
+    contributions: [
+      'Created 7 job aids by synthesizing documentation and UAT insights, improving onboarding clarity and reducing support overhead',
+      'Built Salesforce automations for private-bank onboarding and servicing workflows using Flows, OmniStudio, OmniScripts, LWC, object customization, and Experience Cloud to improve process consistency',
     ],
     skills: [
       'Salesforce',
-      'automation design',
-      'documentation',
-      'financial services',
+      'management consulting'
     ],
-    caseStudyHref: '/projects',
   },
   {
     id: 'seal-lab',
     company: 'Sensors, Energy, and Automation Laboratory',
+    location: 'Seattle, WA',
     role: 'Web Development Team Lead & UX Designer',
     period: 'Feb. 2022 - Aug. 2022',
-    scope:
-      'Managed student web delivery work while contributing UX research and design recommendations for a healthcare-related machine learning product.',
-    context: [
-      'Led an 8-person student team responsible for the SEAL Lab and Industrial Assessment Center websites.',
-      'Worked across web delivery and usability testing in a research-oriented environment.',
-    ],
-    responsibilities: [
-      'Managed the team designing, developing, and maintaining two lab websites.',
-      'Designed and conducted UX usability tests for a machine learning wound management system.',
-    ],
-    impact: [
-      'Created clearer design recommendations by synthesizing usability findings into actionable guidance.',
-      'Improved team coordination and delivery structure across student contributors.',
-      'Balanced technical website maintenance with research-informed UX work.',
+    contributions: [
+      'Managed an 8-person student team to design, develop, and maintain the SEAL Lab and Industrial Assessment Center websites',
+      'Designed and conducted UX usability tests for a machine learning wound management system, synthesizing findings into design recommendations',
     ],
     skills: [
-      'UX research',
-      'team leadership',
       'web development',
-      'design systems',
+      'leadership'
     ],
-    caseStudyHref: '/projects',
   },
   {
     id: 'freelance-illustrator',
     company: 'Independent Business',
+    location: 'Seattle, WA',
     role: 'Freelance Illustrator',
     period: 'Feb. 2022 - Sep. 2025',
-    scope:
-      'Ran an independent digital illustration business covering product creation, marketing, analytics, and financial operations end to end.',
-    context: [
-      'Managed both creative output and business operations as a solo operator.',
-      'Used performance data to guide product and marketing decisions rather than relying on intuition alone.',
-    ],
-    responsibilities: [
-      'Operate the business across product creation, marketing, fulfillment, and financial tracking.',
-      'Analyze engagement and revenue data to forecast demand and optimize product mix.',
-    ],
-    impact: [
-      'Reached up to 100K impressions per post with a 15% engagement rate.',
-      'Built a sustainable operating model for independent creative work.',
-      'Strengthened decision-making through data-informed experimentation and iteration.',
+    contributions: [
+      'Operate an independent digital illustration business managing product creation, marketing, and financial operations end-to-end',
+      'Analyzed engagement and revenue data to forecast demand and optimize product mix, reaching up to 100K impressions per post with 15% engagement rate',
     ],
     skills: [
-      'analytics',
-      'business operations',
-      'creative strategy',
-      'self-direction',
+      'marketing',
+      'financial operations',
+      'data analysis'
     ],
-    caseStudyHref: '/projects',
   },
 ];
 
@@ -242,7 +180,7 @@ export const caseStudies: CaseStudyItem[] = [
     problem:
       'Present resume material in a format that reveals thought process instead of flattening everything into a PDF.',
     constraints:
-      'Needed to stay concise, visually calm, and respectful of limited public project detail.',
+      'Needed to stay concise, visually calm, and structured enough to support quick scanning.',
     role: 'Owned the information architecture, interaction model, and presentation choices.',
     href: '/resume',
   },
@@ -259,30 +197,38 @@ export const caseStudies: CaseStudyItem[] = [
 
 export const educationItems: EducationItem[] = [
   {
-    title: 'Bachelor of Arts in Sociology',
-    institution: 'University of California, Berkeley',
-    detail:
-      'Built a strong analytical and communication foundation with continued relevance to systems thinking, institutions, and cross-functional work.',
+    title: 'BS in Informatics',
+    institution: 'University of Washington, Seattle, WA',
+    period: 'Sep. 2021 - Jun. 2025',
   },
   {
-    title: 'Relevant independent coursework',
-    institution: 'Ongoing study',
+    title: 'Relevant Coursework',
+    institution: 'University of Washington',
+    period: '',
     detail:
-      'System architecture, product strategy, Salesforce administration and development, and AI-assisted workflow design.',
+      'Product and Information System Management, Design Methods, Research Methods, Web Development, Data Structures and Algorithms, Database Systems, Human-Computer Interaction, Machine Learning Concepts',
   },
 ];
 
-export const certificationItems: CertificationItem[] = [
+export const skillGroups: SkillGroup[] = [
   {
-    title: 'Salesforce Administrator',
-    status: 'In progress',
+    title: 'Technical',
+    items: ['SQL', 'Python', 'R', 'JavaScript', 'HTML/CSS', 'React', 'Node.js', 'D3.js', 'Java'],
   },
   {
-    title: 'Salesforce Platform Developer I',
-    status: 'Planned next',
+    title: 'Tools & Platforms',
+    items: ['Salesforce', 'Hubspot', 'Power BI', 'Tableau', 'Excel', 'Figma'],
   },
   {
-    title: 'Architecture and AI workflow milestones',
-    status: 'Tracked through roadmap work',
+    title: 'Business & Strategy',
+    items: [
+      'Product Requirements & Prioritization',
+      'Vendor & Product Research',
+      'Data Analysis',
+      'Process Analysis',
+      'Product Analytics',
+      'UX Research & Design',
+      'AI Enablement',
+    ],
   },
 ];

@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { resumeHero } from '../resume.content';
+
 export function ResumeHero() {
   return (
     <section className="border-b border-[color:var(--border)] pb-10">
@@ -7,27 +10,34 @@ export function ResumeHero() {
             Resume
           </p>
           <h1 className="mt-4 font-serif text-5xl leading-none text-[var(--foreground)] sm:text-6xl">
-            Bella Lee
+            {resumeHero.title}
           </h1>
           <p className="mt-5 text-lg uppercase tracking-[0.24em] text-[var(--secondary)]">
-            Technical Consultant / Systems-Minded Builder
+            {resumeHero.role}
           </p>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-            I like work that turns complexity into something people can
-            understand and use, especially where technical delivery, product
-            thinking, and communication all need to stay connected.
+            {resumeHero.summary}
           </p>
         </div>
 
         <aside className="rounded-[2rem] border border-[color:var(--border)] bg-white/70 p-6 shadow-[0_24px_60px_rgba(33,53,72,0.05)]">
           <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
-            Purpose
+            Contact
           </p>
           <p className="mt-4 text-base leading-7 text-[var(--foreground-muted)]">
-            An explorable resume designed to show experience, technical
-            thinking, impact, and depth of skill in a calmer, more
-            product-like format.
+            {resumeHero.location}
           </p>
+          <p className="mt-2 text-base leading-7 text-[var(--foreground-muted)]">
+            {resumeHero.contactLine}
+          </p>
+          <Link
+            href={resumeHero.linkHref}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-flex text-base leading-7 text-[var(--primary)]"
+          >
+            {resumeHero.linkLabel}
+          </Link>
         </aside>
       </div>
     </section>

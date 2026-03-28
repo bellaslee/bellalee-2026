@@ -18,19 +18,17 @@ export function ResumeExperienceCard({
   return (
     <SurfacePanel
       as="article"
-      className="rounded-[1.75rem] bg-[var(--surface)]/75"
+      className="cursor-pointer rounded-[1.75rem] bg-[var(--surface)]/75 transition-transform duration-200 hover:-translate-y-0.5"
+      onClick={onToggle}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
-            {item.company}
+            {item.company} - {item.location}
           </p>
           <h3 className="mt-2 font-serif text-3xl leading-none text-[var(--foreground)]">
             {item.role}
           </h3>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--foreground-muted)]">
-            {item.scope}
-          </p>
         </div>
         <div className="text-right">
           <p className="whitespace-nowrap text-sm text-[var(--foreground-muted)]">
@@ -43,28 +41,14 @@ export function ResumeExperienceCard({
         <div className="mt-6 grid animate-[fadePanel_220ms_ease-out] gap-6 border-t border-[color:var(--border)] pt-6">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
-              Context
+              Contributions
             </p>
-            <ResumeBulletList items={item.context} tone="muted" />
+            <ResumeBulletList items={item.contributions} />
           </div>
 
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
-              Responsibilities
-            </p>
-            <ResumeBulletList items={item.responsibilities} />
-          </div>
-
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
-              Impact highlights
-            </p>
-            <ResumeBulletList items={item.impact} />
-          </div>
-
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
-              Skills demonstrated
+              Skills
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               {item.skills.map((skill) => (
@@ -77,14 +61,21 @@ export function ResumeExperienceCard({
             </div>
           </div>
 
-          <ResumeArrowLink href={item.caseStudyHref}>
-            View related case study
-          </ResumeArrowLink>
+          {item.caseStudyHref ? (
+            <div onClick={(event) => event.stopPropagation()}>
+              <ResumeArrowLink href={item.caseStudyHref}>
+                View related case study
+              </ResumeArrowLink>
+            </div>
+          ) : null}
 
           <div className="flex justify-end">
             <button
               type="button"
-              onClick={onToggle}
+              onClick={(event) => {
+                event.stopPropagation();
+                onToggle();
+              }}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
               aria-expanded={isExpanded}
               aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.role}`}
@@ -97,7 +88,10 @@ export function ResumeExperienceCard({
         <div className="mt-6 flex justify-end border-t border-[color:var(--border)] pt-6">
           <button
             type="button"
-            onClick={onToggle}
+            onClick={(event) => {
+              event.stopPropagation();
+              onToggle();
+            }}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
             aria-expanded={isExpanded}
             aria-label={`Expand ${item.role}`}

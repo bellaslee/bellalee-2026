@@ -24,7 +24,10 @@ export function ResumeSkillChip({
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={(event) => {
+        event.stopPropagation();
+        onClick?.();
+      }}
       className={`rounded-full border px-4 py-2 text-sm transition-colors ${classes}`}
     >
       {label}
