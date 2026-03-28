@@ -17,11 +17,13 @@ type PrimaryLink = {
 
 const primaryLinks: PrimaryLink[] = [
   { href: '/about', label: 'About' },
-  { href: '/photos', label: 'Photos' },
-  { href: '/art', label: 'Art' },
+  { href: '/resume', label: 'Resume' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/art', label: 'Sketchbook' },
+  { href: '/photos', label: 'Camera Roll' },
   {
     href: 'https://garden.bellalee.com',
-    label: 'Notes',
+    label: 'Notebook',
     icon: 'external',
   },
 ];

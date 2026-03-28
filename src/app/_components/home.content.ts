@@ -4,12 +4,30 @@ export type HomeAction = {
   variant: 'primary' | 'secondary';
 };
 
+export type HeroDetail = {
+  title: string;
+  body: string;
+  surface: 'surface' | 'white';
+};
+
+export type HomeHeroContent = {
+  title: string;
+  description: string;
+  currentlyExploringLabel: string;
+  currentlyExploringTitle: string;
+  details: HeroDetail[];
+};
+
+export type SectionHeadingContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export type HomeFeature = {
   title: string;
   description: string;
-  items: string[];
   href: string;
-  eyebrow: string;
   ctaLabel: string;
   emphasis: 'featured' | 'standard';
   surface: 'surface' | 'white' | 'muted';
@@ -22,60 +40,79 @@ export type LearningTopic = {
   next: string;
 };
 
+export const homeHeroContent: HomeHeroContent = {
+  title: "Hi, I'm Bella!",
+  description:
+    'I am a consultant, artist, writer, and lifelong learner. This site is a place for the projects, photos, and ongoing learning that matter to me.',
+  currentlyExploringLabel: 'Currently Working On',
+  currentlyExploringTitle: 'Adding more personality to this website',
+  details: [
+    {
+      title: 'Context',
+      body: "I've got the rough framework down, but I think it still feels too ordinary.",
+      surface: 'surface',
+    },
+    {
+      title: 'Approach',
+      body: 'Creating doodles that appear as you scroll down the page.',
+      surface: 'white',
+    },
+  ],
+};
+
 export const homeActions: HomeAction[] = [
   {
-    href: 'https://github.com/bellaslee/bellalee-2026',
-    label: 'Github',
+    href: '/resume',
+    label: 'View Resume',
     variant: 'primary',
+  },
+  {
+    href: '/projects',
+    label: 'Explore Projects',
+    variant: 'secondary',
   },
 ];
 
 export const identityPillars = [
-  'Technical consulting',
   'Product management',
-  'System architecture',
   'Learning in public',
+  'Drawing and painting',
+  'Photography',
 ];
+
+export const identityPillarsHeading = 'Core focus areas';
+
+export const learningTopicsSectionContent: SectionHeadingContent = {
+  eyebrow: 'Current Learning',
+  title: 'A compact view into the ideas shaping how I work and live.',
+  description:
+    'A snapshot of what I am focused on now and what I want to move into next.',
+};
 
 export const featureCards: HomeFeature[] = [
   {
     title: 'Interactive Resume',
-    description:
-      'A structured view of consulting work, cross-functional delivery, and the technical decisions behind each engagement.',
-    items: ['Experience', 'Engagement highlights'],
+    description: 'A structured view of the work I do.',
     href: '/resume',
-    eyebrow: 'Featured Path',
-    ctaLabel: 'Step inside',
-    emphasis: 'featured',
+    ctaLabel: 'Learn more',
+    emphasis: 'standard',
     surface: 'surface',
   },
   {
-    title: 'Learning Roadmap',
+    title: 'Photo Diary',
     description:
-      'A working roadmap for what I am focused on now, what I want to move into next, and how those threads shape future projects and writing.',
-    items: [
-      'Current focus',
-      'Next steps',
-      'Structured findings and reflections',
-    ],
-    href: '/roadmap',
-    eyebrow: 'Explore',
-    ctaLabel: 'Learn more',
+      'A time capsule of sorts featuring photos I take on my childhood digital camera.',
+    href: '/photos',
+    ctaLabel: 'Explore',
     emphasis: 'standard',
     surface: 'white',
   },
   {
-    title: 'Working Notes',
+    title: 'Digital Garden',
     description:
-      'A living notebook of technical explorations, reflections, and unfinished thinking that connects the work behind the work.',
-    items: [
-      'Essays and book logs',
-      'Rough notes',
-      'In-progress reflections on work and learning',
-    ],
+      'A living notebook of technical explorations, reflections, and unfinished thinking.',
     href: 'https://garden.bellalee.com',
-    eyebrow: 'Explore',
-    ctaLabel: 'Learn more',
+    ctaLabel: 'Step inside',
     emphasis: 'standard',
     surface: 'muted',
   },

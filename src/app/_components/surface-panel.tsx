@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { type HTMLAttributes, type ReactNode } from 'react';
 
 type SurfaceVariant = 'surface' | 'white' | 'muted';
 type SurfacePadding = 'default' | 'compact' | 'spacious';
@@ -7,7 +7,7 @@ type SurfaceTitleSize = 'medium' | 'large' | 'display';
 type SurfaceHeadingTag = 'h2' | 'h3';
 type SurfaceDescriptionTone = 'muted' | 'default';
 
-type SurfacePanelProps = {
+type SurfacePanelProps = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
   className?: string;
   as?: 'article' | 'aside' | 'div' | 'section';
@@ -18,7 +18,7 @@ type SurfacePanelProps = {
 type SurfaceLinkCardProps = {
   href: string;
   title: string;
-  eyebrow: string;
+  eyebrow?: string;
   description: string;
   children?: ReactNode;
   ctaLabel: string;
@@ -63,11 +63,13 @@ export function SurfacePanel({
   as = 'div',
   variant = 'surface',
   padding = 'default',
+  ...props
 }: SurfacePanelProps) {
   const Component = as;
 
   return (
     <Component
+      {...props}
       className={joinClasses(
         'card-sheen rounded-[2rem] border border-[color:var(--border)] shadow-[0_24px_60px_rgba(33,53,72,0.05)]',
         panelVariantClasses[variant],
@@ -110,12 +112,15 @@ export function SurfaceLinkCard({
       )}
     >
       <div className="relative z-10">
-        <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
-          {eyebrow}
-        </p>
+        {eyebrow ? (
+          <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
+            {eyebrow}
+          </p>
+        ) : null}
         <HeadingTag
           className={joinClasses(
-            'mt-3 font-serif leading-none text-[var(--foreground)]',
+            eyebrow ? 'mt-3' : '',
+            'font-serif leading-none text-[var(--foreground)]',
             titleSizeClasses[titleSize],
           )}
         >

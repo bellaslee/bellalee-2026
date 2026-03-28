@@ -5,7 +5,9 @@ import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import lgZoom from 'lightgallery/plugins/zoom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { ArtEntry } from '../art.content';
 
 type ArtGalleryProps = {
@@ -16,6 +18,8 @@ type MasonryItem = {
   piece: ArtEntry;
   index: number;
 };
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SM_BREAKPOINT = 640;
 const XL_BREAKPOINT = 1280;
@@ -58,6 +62,8 @@ function buildColumns(art: ArtEntry[], columnCount: number) {
 
 export function ArtGallery({ art }: ArtGalleryProps) {
   const [columnCount, setColumnCount] = useState(1);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
 
   useEffect(() => {
     const updateColumnCount = () => {
@@ -72,10 +78,50 @@ export function ArtGallery({ art }: ArtGalleryProps) {
     };
   }, []);
 
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (reduceMotion.matches) {
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      itemRefs.current.forEach((item, index) => {
+        if (!item) {
+          return;
+        }
+
+        gsap.set(item, {
+          autoAlpha: 0,
+          y: 32,
+          willChange: 'transform, opacity',
+        });
+
+        gsap.to(item, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8,
+          delay: index * 0.04,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top bottom-=10%',
+            once: true,
+          },
+          clearProps: 'willChange',
+        });
+      });
+    }, sectionRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [columnCount, art]);
+
   const columns = buildColumns(art, columnCount);
 
   return (
-    <section className="py-10 sm:py-14" aria-label="Artwork gallery">
+    <section ref={sectionRef} className="py-10 sm:py-14" aria-label="Artwork gallery">
       <LightGallery
         plugins={[lgZoom]}
         selector="a"
@@ -96,7 +142,13 @@ export function ArtGallery({ art }: ArtGalleryProps) {
               className="list-none space-y-6 p-0 sm:space-y-8"
             >
               {column.map(({ piece, index }) => (
-                <li key={piece.src} className="min-w-0">
+                <li
+                  key={piece.src}
+                  ref={(element) => {
+                    itemRefs.current[index] = element;
+                  }}
+                  className="min-w-0"
+                >
                   <a
                     href={piece.src}
                     data-src={piece.src}

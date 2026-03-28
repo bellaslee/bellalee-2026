@@ -1,0 +1,4 @@
+interface:
+  display_name: "Art Content Sync"
+  short_description: "Add new public/art files to art.content.ts"
+  default_prompt: "Use $art-content-sync to add newly added public/art files into src/app/art/art.content.ts in date-created order while preserving existing metadata."

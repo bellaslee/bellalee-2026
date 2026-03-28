@@ -2,22 +2,20 @@ import { PageIntro } from '../_components/page-intro';
 import { SitePage } from '../_components/site-page';
 import { SurfacePanel } from '../_components/surface-panel';
 
+const aboutSectionVariants = ['surface', 'muted', 'white'] as const;
+
 const aboutSections = [
   {
-    title: 'How I Work',
+    title: 'How I work',
     body: "I like work that turns chaos into organized systems. That usually means translating between product goals, design, and delivery. On a more personal level, I'm obsessed with Obsidian, personal knowledge management, and thorough budgeting spreadsheets.",
   },
   {
-    title: 'What I Care About',
-    body: "Great experiences start with people. I believe the most important part of any work is understanding the people and stories behind the problems we solve.",
+    title: 'What I care about',
+    body: 'Great experiences start with people. I believe the most important part of any work is understanding the people and stories behind the problems we solve.',
   },
   {
-    title: 'What This Site Is For',
-    body: 'This space is meant to hold projects, resume context, roadmap threads, and notes in one place so the work and the thinking around it can stay connected.',
-  },
-  {
-    title: 'Beyond Work',
-    body: "I enjoy drawing, singing, fingerstyle guitar, hip-hop dance, reading, and creative writing. I take pride in my curiosity and eagerness to learn, and I hope to get to know myself, others, and the world better as I progress in my life and in my career. I gravitate toward themes of love, fate, eternity, and loss in art and philosophy. Recently, I've been really interested in learning about search and retrieval systems.",
+    title: 'Beyond work',
+    body: 'I enjoy drawing, singing, fingerstyle guitar, hip-hop dance, reading, and creative writing. I take pride in my curiosity and eagerness to learn, and I hope to get to know myself, others, and the world better as I progress in my life and in my career. I gravitate toward themes of love, fate, eternity, and loss in art and philosophy.',
   },
 ];
 
@@ -26,14 +24,19 @@ export default function AboutPage() {
     <SitePage footerClassName="mt-auto">
       <PageIntro
         eyebrow="About"
-        title="A peek into who I am, both at and outside of work."
+        title="A peek into who I am."
         description="I am currently a technical consultant at West Monroe, but more than that, I am also an artist, writer, and lifelong learner."
         className="lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)]"
       />
 
-      <section className="grid gap-6 py-10 md:grid-cols-2">
-        {aboutSections.map((section) => (
-          <SurfacePanel key={section.title} as="article">
+      <section className="grid gap-6 max-w-3xl py-10">
+        {aboutSections.map((section, index) => (
+          <SurfacePanel
+            key={section.title}
+            as="article"
+            variant={aboutSectionVariants[index % aboutSectionVariants.length]}
+            className="relative"
+          >
             <div
               className="ornament absolute inset-0 opacity-25"
               aria-hidden="true"

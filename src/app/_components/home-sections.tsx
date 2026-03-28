@@ -3,12 +3,16 @@ import { SectionHeading } from './section-heading';
 import {
   featureCards,
   homeActions,
+  homeHeroContent,
   identityPillars,
+  identityPillarsHeading,
+  learningTopicsSectionContent,
   learningTopics,
   type HomeAction,
   type HomeFeature,
+  type HeroDetail as HeroDetailContent,
   type LearningTopic,
-} from './home-content';
+} from './home.content';
 import { SurfaceLinkCard, SurfacePanel } from './surface-panel';
 
 function HomeActionLink({ href, label, variant }: HomeAction) {
@@ -41,11 +45,7 @@ function HeroDetail({
   title,
   body,
   surface,
-}: {
-  title: string;
-  body: string;
-  surface: 'surface' | 'white';
-}) {
+}: HeroDetailContent) {
   const surfaceClasses =
     surface === 'surface' ? 'bg-[var(--surface)]/90' : 'bg-white/85';
 
@@ -56,7 +56,9 @@ function HeroDetail({
       <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
         {title}
       </p>
-      <p className="mt-2 text-base leading-7 text-[var(--foreground)]">{body}</p>
+      <p className="mt-2 text-base leading-7 text-[var(--foreground)]">
+        {body}
+      </p>
     </div>
   );
 }
@@ -66,12 +68,10 @@ export function HomeHeroSection() {
     <section className="grid gap-10 pb-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-16">
       <div className="max-w-3xl">
         <h1 className="font-serif text-6xl leading-none text-[var(--foreground)] sm:text-7xl lg:text-[5rem]">
-          Bella enjoys bridging the gap between people, process, and technology.
+          {homeHeroContent.title}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-          I work at the overlap of technical consulting, product management, and
-          system architecture, helping teams turn complexity into clear
-          decisions, scalable systems, and products people can actually use.
+          {homeHeroContent.description}
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           {homeActions.map((action) => (
@@ -85,27 +85,23 @@ export function HomeHeroSection() {
         variant="white"
         padding="spacious"
       >
-        <div className="ornament absolute inset-0 opacity-25" aria-hidden="true" />
+        <div
+          className="ornament absolute inset-0 opacity-25"
+          aria-hidden="true"
+        />
         <div className="space-y-6">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--secondary)]">
-              Currently Exploring
+              {homeHeroContent.currentlyExploringLabel}
             </p>
             <h2 className="mt-3 font-serif text-4xl leading-tight text-[var(--foreground)]">
-              Revamping my personal website.
+              {homeHeroContent.currentlyExploringTitle}
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <HeroDetail
-              title="Focus"
-              body='Making it more "me" while experimenting with new designs and workflows.'
-              surface="surface"
-            />
-            <HeroDetail
-              title="Approach"
-              body="Iterative development, adding a balanced mix of professional and personal content."
-              surface="white"
-            />
+            {homeHeroContent.details.map((detail) => (
+              <HeroDetail key={detail.title} {...detail} />
+            ))}
           </div>
         </div>
       </SurfacePanel>
@@ -120,7 +116,7 @@ export function IdentityPillarsSection() {
       className="mb-12 border-y border-[color:var(--border)] py-5"
     >
       <h2 id="identity-pillars-heading" className="sr-only">
-        Core focus areas
+        {identityPillarsHeading}
       </h2>
       <ul className="grid gap-3 text-sm uppercase tracking-[0.22em] text-[var(--primary)] sm:grid-cols-2 lg:grid-cols-4">
         {identityPillars.map((item) => (
@@ -137,23 +133,12 @@ export function IdentityPillarsSection() {
   );
 }
 
-function FeatureCardList({ items }: { items: string[] }) {
-  return (
-    <ul className="mt-6 space-y-2 text-sm text-[var(--foreground)]">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 function HomeFeatureCard({ feature }: { feature: HomeFeature }) {
   const isFeatured = feature.emphasis === 'featured';
 
   return (
     <SurfaceLinkCard
       href={feature.href}
-      eyebrow={feature.eyebrow}
       title={feature.title}
       description={feature.description}
       ctaLabel={feature.ctaLabel}
@@ -161,30 +146,25 @@ function HomeFeatureCard({ feature }: { feature: HomeFeature }) {
       padding={isFeatured ? 'spacious' : 'default'}
       titleSize={isFeatured ? 'display' : 'large'}
       titleAs="h3"
-      className={isFeatured ? 'lg:row-span-2 shadow-[0_24px_60px_rgba(33,53,72,0.06)]' : undefined}
-    >
-      <FeatureCardList items={feature.items} />
-    </SurfaceLinkCard>
+      className={
+        isFeatured
+          ? 'shadow-[0_24px_60px_rgba(33,53,72,0.06)]'
+          : undefined
+      }
+    />
   );
 }
 
 export function FeatureGridSection() {
-  const [featuredCard, ...secondaryCards] = featureCards;
-
   return (
     <section aria-labelledby="featured-destinations-heading" className="pb-14">
       <h2 id="featured-destinations-heading" className="sr-only">
         Featured destinations
       </h2>
-      <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-5 lg:grid-rows-2">
-          <HomeFeatureCard feature={featuredCard} />
-        </div>
-        <div className="grid gap-5">
-          {secondaryCards.map((feature) => (
-            <HomeFeatureCard key={feature.title} feature={feature} />
-          ))}
-        </div>
+      <div className="grid gap-5 lg:grid-cols-3">
+        {featureCards.map((feature) => (
+          <HomeFeatureCard key={feature.title} feature={feature} />
+        ))}
       </div>
     </section>
   );
@@ -192,19 +172,18 @@ export function FeatureGridSection() {
 
 function LearningTopicCard({ topic }: { topic: LearningTopic }) {
   return (
-    <SurfaceLinkCard
-      href="/roadmap"
-      eyebrow={topic.tag}
-      title={topic.title}
-      description={topic.current}
-      ctaLabel="Open notes and demos"
+    <SurfacePanel
+      as="article"
       variant="white"
       padding="compact"
-      titleSize="medium"
-      titleAs="h3"
-      descriptionTone="default"
       className="shadow-[0_20px_50px_rgba(33,53,72,0.05)]"
     >
+      <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
+        {topic.tag}
+      </p>
+      <h3 className="mt-3 font-serif text-3xl leading-none text-[var(--foreground)]">
+        {topic.title}
+      </h3>
       <dl className="mt-5 grid gap-3 md:grid-cols-2">
         <div className="md:border-r md:border-[color:var(--border)] md:pr-4">
           <dt className="text-xs uppercase tracking-[0.18em] text-[var(--secondary)]">
@@ -223,7 +202,7 @@ function LearningTopicCard({ topic }: { topic: LearningTopic }) {
           </dd>
         </div>
       </dl>
-    </SurfaceLinkCard>
+    </SurfacePanel>
   );
 }
 
@@ -231,9 +210,9 @@ export function LearningTopicsSection() {
   return (
     <section className="grid gap-8 py-14 lg:grid-cols-[0.7fr_1.3fr]">
       <SectionHeading
-        eyebrow="Current Learning"
-        title="A compact view into the ideas shaping how I work and live."
-        description="The roadmap shows what I am focused on now, what I want to move into next, and how those threads feed future projects, writing, and ways of working."
+        eyebrow={learningTopicsSectionContent.eyebrow}
+        title={learningTopicsSectionContent.title}
+        description={learningTopicsSectionContent.description}
       />
 
       <div className="grid gap-4">

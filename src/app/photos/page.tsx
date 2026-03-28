@@ -14,8 +14,8 @@ export default function PhotosPage() {
   return (
     <SitePage footerClassName="mt-8">
       <PageIntro
-        eyebrow="Photo Diary"
-        title="The most beautiful moment in life."
+        eyebrow="Camera Roll"
+        title="The most beautiful moments in life."
         description="I like capturing photos on my digital camera that emphasize the weight of a place and a moment."
       />
 

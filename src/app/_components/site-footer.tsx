@@ -8,6 +8,10 @@ type SiteFooterProps = {
 
 const footerLinks = [
   {
+    href: '/projects',
+    label: 'Projects',
+  },
+  {
     href: 'https://garden.bellalee.com',
     label: 'Notes',
     icon: 'external' as const,
