@@ -2,6 +2,8 @@ import { PageIntro } from '../_components/page-intro';
 import { SitePage } from '../_components/site-page';
 import { SurfacePanel } from '../_components/surface-panel';
 
+const aboutSectionVariants = ['surface', 'muted', 'white'] as const;
+
 const aboutSections = [
   {
     title: 'How I work',
@@ -27,13 +29,14 @@ export default function AboutPage() {
         className="lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)]"
       />
 
-      <section className="grid gap-6 py-10 md:grid-cols-2">
-        {aboutSections.map((section) => (
-          <SurfacePanel key={section.title} as="article">
-            <div
-              className="ornament absolute inset-0 opacity-25"
-              aria-hidden="true"
-            />
+      <section className="grid gap-6 max-w-3xl py-10">
+        {aboutSections.map((section, index) => (
+          <SurfacePanel
+            key={section.title}
+            as="article"
+            variant={aboutSectionVariants[index % aboutSectionVariants.length]}
+            className="ornament"
+          >
             <h2 className="font-serif text-4xl leading-none text-[var(--foreground)]">
               {section.title}
             </h2>
