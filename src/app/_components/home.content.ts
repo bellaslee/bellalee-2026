@@ -4,6 +4,26 @@ export type HomeAction = {
   variant: 'primary' | 'secondary';
 };
 
+export type HeroDetail = {
+  title: string;
+  body: string;
+  surface: 'surface' | 'white';
+};
+
+export type HomeHeroContent = {
+  title: string;
+  description: string;
+  currentlyExploringLabel: string;
+  currentlyExploringTitle: string;
+  details: HeroDetail[];
+};
+
+export type SectionHeadingContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export type HomeFeature = {
   title: string;
   description: string;
@@ -20,6 +40,27 @@ export type LearningTopic = {
   tag: string;
   current: string;
   next: string;
+};
+
+export const homeHeroContent: HomeHeroContent = {
+  title:
+    'Bella enjoys bridging the gap between people, process, and technology.',
+  description:
+    'I work at the overlap of technical consulting, product management, and system architecture, helping teams turn complexity into clear decisions, scalable systems, and products people can actually use.',
+  currentlyExploringLabel: 'Currently Exploring',
+  currentlyExploringTitle: 'Creating reusable AI workflows.',
+  details: [
+    {
+      title: 'Focus',
+      body: 'Experimenting with AI workflows to create repeatable and effective frameworks.',
+      surface: 'surface',
+    },
+    {
+      title: 'Approach',
+      body: 'Process and product-minded problem solving, future-state considerations, and documentation that keeps ideas visible.',
+      surface: 'white',
+    },
+  ],
 };
 
 export const homeActions: HomeAction[] = [
@@ -41,6 +82,15 @@ export const identityPillars = [
   'System architecture',
   'Learning in public',
 ];
+
+export const identityPillarsHeading = 'Core focus areas';
+
+export const learningTopicsSectionContent: SectionHeadingContent = {
+  eyebrow: 'Current Learning',
+  title: 'A compact view into the ideas shaping how I work and live.',
+  description:
+    'A snapshot of what I am focused on now and what I want to move into next.',
+};
 
 export const featureCards: HomeFeature[] = [
   {

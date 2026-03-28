@@ -3,12 +3,16 @@ import { SectionHeading } from './section-heading';
 import {
   featureCards,
   homeActions,
+  homeHeroContent,
   identityPillars,
+  identityPillarsHeading,
+  learningTopicsSectionContent,
   learningTopics,
   type HomeAction,
   type HomeFeature,
+  type HeroDetail as HeroDetailContent,
   type LearningTopic,
-} from './home-content';
+} from './home.content';
 import { SurfaceLinkCard, SurfacePanel } from './surface-panel';
 
 function HomeActionLink({ href, label, variant }: HomeAction) {
@@ -41,11 +45,7 @@ function HeroDetail({
   title,
   body,
   surface,
-}: {
-  title: string;
-  body: string;
-  surface: 'surface' | 'white';
-}) {
+}: HeroDetailContent) {
   const surfaceClasses =
     surface === 'surface' ? 'bg-[var(--surface)]/90' : 'bg-white/85';
 
@@ -68,12 +68,10 @@ export function HomeHeroSection() {
     <section className="grid gap-10 pb-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-16">
       <div className="max-w-3xl">
         <h1 className="font-serif text-6xl leading-none text-[var(--foreground)] sm:text-7xl lg:text-[5rem]">
-          Bella enjoys bridging the gap between people, process, and technology.
+          {homeHeroContent.title}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-          I work at the overlap of technical consulting, product management, and
-          system architecture, helping teams turn complexity into clear
-          decisions, scalable systems, and products people can actually use.
+          {homeHeroContent.description}
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           {homeActions.map((action) => (
@@ -94,23 +92,16 @@ export function HomeHeroSection() {
         <div className="space-y-6">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--secondary)]">
-              Currently Exploring
+              {homeHeroContent.currentlyExploringLabel}
             </p>
             <h2 className="mt-3 font-serif text-4xl leading-tight text-[var(--foreground)]">
-              Creating reusable AI workflows.
+              {homeHeroContent.currentlyExploringTitle}
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <HeroDetail
-              title="Focus"
-              body="Experimenting with AI workflows to create repeatable and effective frameworks."
-              surface="surface"
-            />
-            <HeroDetail
-              title="Approach"
-              body="Process and product-minded problem solving, future-state considerations, and documentation that keeps ideas visible."
-              surface="white"
-            />
+            {homeHeroContent.details.map((detail) => (
+              <HeroDetail key={detail.title} {...detail} />
+            ))}
           </div>
         </div>
       </SurfacePanel>
@@ -125,7 +116,7 @@ export function IdentityPillarsSection() {
       className="mb-12 border-y border-[color:var(--border)] py-5"
     >
       <h2 id="identity-pillars-heading" className="sr-only">
-        Core focus areas
+        {identityPillarsHeading}
       </h2>
       <ul className="grid gap-3 text-sm uppercase tracking-[0.22em] text-[var(--primary)] sm:grid-cols-2 lg:grid-cols-4">
         {identityPillars.map((item) => (
@@ -239,9 +230,9 @@ export function LearningTopicsSection() {
   return (
     <section className="grid gap-8 py-14 lg:grid-cols-[0.7fr_1.3fr]">
       <SectionHeading
-        eyebrow="Current Learning"
-        title="A compact view into the ideas shaping how I work and live."
-        description="A snapshot of what I am focused on now and what I want to move into next."
+        eyebrow={learningTopicsSectionContent.eyebrow}
+        title={learningTopicsSectionContent.title}
+        description={learningTopicsSectionContent.description}
       />
 
       <div className="grid gap-4">
