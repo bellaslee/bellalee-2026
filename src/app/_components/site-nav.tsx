@@ -19,7 +19,6 @@ const primaryLinks: PrimaryLink[] = [
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/tools', label: 'Tools' },
   { href: '/projects', label: 'Projects' },
   { href: '/photos', label: 'Photos' },
   {
@@ -52,7 +51,9 @@ export function SiteNav({ className = '' }: SiteNavProps) {
         className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--border)] bg-white/70 text-[var(--foreground)] transition-colors duration-200 hover:bg-white md:hidden"
         aria-expanded={isMobileMenuOpen}
         aria-controls="mobile-site-menu"
-        aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-label={
+          isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+        }
         onClick={() => setIsMobileMenuOpen((open) => !open)}
       >
         <span className="sr-only">
