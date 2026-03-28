@@ -18,7 +18,6 @@ type PrimaryLink = {
 const primaryLinks: PrimaryLink[] = [
   { href: '/about', label: 'About' },
   { href: '/resume', label: 'Resume' },
-  { href: '/roadmap', label: 'Roadmap' },
   { href: '/projects', label: 'Projects' },
   { href: '/art', label: 'Art' },
   { href: '/photos', label: 'Photos' },
