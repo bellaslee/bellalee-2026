@@ -56,7 +56,9 @@ function HeroDetail({
       <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
         {title}
       </p>
-      <p className="mt-2 text-base leading-7 text-[var(--foreground)]">{body}</p>
+      <p className="mt-2 text-base leading-7 text-[var(--foreground)]">
+        {body}
+      </p>
     </div>
   );
 }
@@ -88,7 +90,10 @@ export function HomeHeroSection() {
         variant="white"
         padding="spacious"
       >
-        <div className="ornament absolute inset-0 opacity-25" aria-hidden="true" />
+        <div
+          className="ornament absolute inset-0 opacity-25"
+          aria-hidden="true"
+        />
         <div className="space-y-6">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[var(--secondary)]">
@@ -164,7 +169,11 @@ function HomeFeatureCard({ feature }: { feature: HomeFeature }) {
       padding={isFeatured ? 'spacious' : 'default'}
       titleSize={isFeatured ? 'display' : 'large'}
       titleAs="h3"
-      className={isFeatured ? 'lg:row-span-2 shadow-[0_24px_60px_rgba(33,53,72,0.06)]' : undefined}
+      className={
+        isFeatured
+          ? 'lg:row-span-2 shadow-[0_24px_60px_rgba(33,53,72,0.06)]'
+          : undefined
+      }
     >
       <FeatureCardList items={feature.items} />
     </SurfaceLinkCard>
@@ -195,19 +204,18 @@ export function FeatureGridSection() {
 
 function LearningTopicCard({ topic }: { topic: LearningTopic }) {
   return (
-    <SurfaceLinkCard
-      href="/roadmap"
-      eyebrow={topic.tag}
-      title={topic.title}
-      description={topic.current}
-      ctaLabel="Open notes and demos"
+    <SurfacePanel
+      as="article"
       variant="white"
       padding="compact"
-      titleSize="medium"
-      titleAs="h3"
-      descriptionTone="default"
       className="shadow-[0_20px_50px_rgba(33,53,72,0.05)]"
     >
+      <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
+        {topic.tag}
+      </p>
+      <h3 className="mt-3 font-serif text-3xl leading-none text-[var(--foreground)]">
+        {topic.title}
+      </h3>
       <dl className="mt-5 grid gap-3 md:grid-cols-2">
         <div className="md:border-r md:border-[color:var(--border)] md:pr-4">
           <dt className="text-xs uppercase tracking-[0.18em] text-[var(--secondary)]">
@@ -226,7 +234,7 @@ function LearningTopicCard({ topic }: { topic: LearningTopic }) {
           </dd>
         </div>
       </dl>
-    </SurfaceLinkCard>
+    </SurfacePanel>
   );
 }
 
@@ -236,7 +244,7 @@ export function LearningTopicsSection() {
       <SectionHeading
         eyebrow="Current Learning"
         title="A compact view into the ideas shaping how I work and live."
-        description="The roadmap shows what I am focused on now, what I want to move into next, and how those threads feed future projects, writing, and ways of working."
+        description="A snapshot of what I am focused on now and what I want to move into next."
       />
 
       <div className="grid gap-4">

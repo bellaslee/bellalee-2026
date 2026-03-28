@@ -55,24 +55,20 @@ export const featureCards: HomeFeature[] = [
     surface: 'surface',
   },
   {
-    title: 'Learning Roadmap',
+    title: 'Photo Diary',
     description:
-      'A working roadmap for what I am focused on now, what I want to move into next, and how those threads shape future projects and writing.',
-    items: [
-      'Current focus',
-      'Next steps',
-      'Structured findings and reflections',
-    ],
-    href: '/roadmap',
+      'A time capsule of sorts featuring photos I take on my childhood digital camera.',
+    items: [''],
+    href: '/photos',
     eyebrow: 'Explore',
     ctaLabel: 'Learn more',
     emphasis: 'standard',
     surface: 'white',
   },
   {
-    title: 'Working Notes',
+    title: 'Digital Garden',
     description:
-      'A living notebook of technical explorations, reflections, and unfinished thinking that connects the work behind the work.',
+      'A living notebook of technical explorations, reflections, and unfinished thinking.',
     items: [
       'Essays and book logs',
       'Rough notes',
@@ -118,8 +114,7 @@ export const learningTopics: LearningTopic[] = [
   {
     title: 'Bread-Baking',
     tag: 'Craft',
-    current:
-      'Practicing technique through repeat bakes and better dough feel.',
+    current: 'Practicing technique through repeat bakes and better dough feel.',
     next: 'Refine consistency and document the recipes worth keeping.',
   },
 ];
