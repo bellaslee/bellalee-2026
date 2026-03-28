@@ -43,10 +43,9 @@ export type LearningTopic = {
 };
 
 export const homeHeroContent: HomeHeroContent = {
-  title:
-    'Bella enjoys bridging the gap between people, process, and technology.',
+  title: "Hi, I'm Bella!",
   description:
-    'I work at the overlap of technical consulting, product management, and system architecture, helping teams turn complexity into clear decisions, scalable systems, and products people can actually use.',
+    'I am a consultant, artist, writer, and lifelong learner. This site is a place for the projects, photos, and ongoing learning that matter to me.',
   currentlyExploringLabel: 'Currently Exploring',
   currentlyExploringTitle: 'Creating reusable AI workflows.',
   details: [
@@ -77,10 +76,10 @@ export const homeActions: HomeAction[] = [
 ];
 
 export const identityPillars = [
-  'Technical consulting',
   'Product management',
-  'System architecture',
   'Learning in public',
+  'Drawing and painting',
+  'Photography',
 ];
 
 export const identityPillarsHeading = 'Core focus areas';
