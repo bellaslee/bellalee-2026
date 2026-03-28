@@ -27,9 +27,7 @@ export type SectionHeadingContent = {
 export type HomeFeature = {
   title: string;
   description: string;
-  items: string[];
   href: string;
-  eyebrow: string;
   ctaLabel: string;
   emphasis: 'featured' | 'standard';
   surface: 'surface' | 'white' | 'muted';
@@ -95,21 +93,17 @@ export const featureCards: HomeFeature[] = [
   {
     title: 'Interactive Resume',
     description: 'A structured view of the work I do.',
-    items: ['Experience', 'Engagement highlights'],
     href: '/resume',
-    eyebrow: 'Featured Path',
-    ctaLabel: 'Step inside',
-    emphasis: 'featured',
+    ctaLabel: 'Learn more',
+    emphasis: 'standard',
     surface: 'surface',
   },
   {
     title: 'Photo Diary',
     description:
       'A time capsule of sorts featuring photos I take on my childhood digital camera.',
-    items: [''],
     href: '/photos',
-    eyebrow: 'Explore',
-    ctaLabel: 'Learn more',
+    ctaLabel: 'Explore',
     emphasis: 'standard',
     surface: 'white',
   },
@@ -117,14 +111,8 @@ export const featureCards: HomeFeature[] = [
     title: 'Digital Garden',
     description:
       'A living notebook of technical explorations, reflections, and unfinished thinking.',
-    items: [
-      'Essays and book logs',
-      'Rough notes',
-      'In-progress reflections on work and learning',
-    ],
     href: 'https://garden.bellalee.com',
-    eyebrow: 'Explore',
-    ctaLabel: 'Learn more',
+    ctaLabel: 'Step inside',
     emphasis: 'standard',
     surface: 'muted',
   },

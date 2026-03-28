@@ -18,7 +18,7 @@ type SurfacePanelProps = HTMLAttributes<HTMLElement> & {
 type SurfaceLinkCardProps = {
   href: string;
   title: string;
-  eyebrow: string;
+  eyebrow?: string;
   description: string;
   children?: ReactNode;
   ctaLabel: string;
@@ -112,12 +112,15 @@ export function SurfaceLinkCard({
       )}
     >
       <div className="relative z-10">
-        <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
-          {eyebrow}
-        </p>
+        {eyebrow ? (
+          <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
+            {eyebrow}
+          </p>
+        ) : null}
         <HeadingTag
           className={joinClasses(
-            'mt-3 font-serif leading-none text-[var(--foreground)]',
+            eyebrow ? 'mt-3' : '',
+            'font-serif leading-none text-[var(--foreground)]',
             titleSizeClasses[titleSize],
           )}
         >

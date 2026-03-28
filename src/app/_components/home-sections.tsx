@@ -133,23 +133,12 @@ export function IdentityPillarsSection() {
   );
 }
 
-function FeatureCardList({ items }: { items: string[] }) {
-  return (
-    <ul className="mt-6 space-y-2 text-sm text-[var(--foreground)]">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
 function HomeFeatureCard({ feature }: { feature: HomeFeature }) {
   const isFeatured = feature.emphasis === 'featured';
 
   return (
     <SurfaceLinkCard
       href={feature.href}
-      eyebrow={feature.eyebrow}
       title={feature.title}
       description={feature.description}
       ctaLabel={feature.ctaLabel}
@@ -159,32 +148,23 @@ function HomeFeatureCard({ feature }: { feature: HomeFeature }) {
       titleAs="h3"
       className={
         isFeatured
-          ? 'lg:row-span-2 shadow-[0_24px_60px_rgba(33,53,72,0.06)]'
+          ? 'shadow-[0_24px_60px_rgba(33,53,72,0.06)]'
           : undefined
       }
-    >
-      <FeatureCardList items={feature.items} />
-    </SurfaceLinkCard>
+    />
   );
 }
 
 export function FeatureGridSection() {
-  const [featuredCard, ...secondaryCards] = featureCards;
-
   return (
     <section aria-labelledby="featured-destinations-heading" className="pb-14">
       <h2 id="featured-destinations-heading" className="sr-only">
         Featured destinations
       </h2>
-      <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-5 lg:grid-rows-2">
-          <HomeFeatureCard feature={featuredCard} />
-        </div>
-        <div className="grid gap-5">
-          {secondaryCards.map((feature) => (
-            <HomeFeatureCard key={feature.title} feature={feature} />
-          ))}
-        </div>
+      <div className="grid gap-5 lg:grid-cols-3">
+        {featureCards.map((feature) => (
+          <HomeFeatureCard key={feature.title} feature={feature} />
+        ))}
       </div>
     </section>
   );
