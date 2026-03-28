@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "lightgallery/css/lightgallery.css";
+@import "lightgallery/css/lg-zoom.css";
 
 :root {
   --background: #f8f7f3;
