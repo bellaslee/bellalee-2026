@@ -29,6 +29,9 @@ export function ResumeExperienceCard({
           <h3 className="mt-2 font-serif text-3xl leading-none text-[var(--foreground)]">
             {item.role}
           </h3>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--foreground-muted)]">
+            {item.summary}
+          </p>
         </div>
         <div className="text-right">
           <p className="whitespace-nowrap text-sm text-[var(--foreground-muted)]">

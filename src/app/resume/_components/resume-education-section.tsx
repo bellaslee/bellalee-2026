@@ -11,7 +11,7 @@ export function ResumeEducationSection() {
             as="article"
             className="rounded-[1.75rem] bg-[var(--surface)]/75"
           >
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col gap-2">
               <h3 className="font-serif text-3xl leading-none text-[var(--foreground)]">
                 {item.title}
               </h3>

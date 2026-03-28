@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { resumeHero } from '../resume.content';
 
 export function ResumeHero() {
@@ -7,7 +6,7 @@ export function ResumeHero() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(280px,0.95fr)] lg:items-end">
         <div className="max-w-3xl">
           <p className="text-sm uppercase tracking-[0.28em] text-[var(--primary)]">
-            Resume
+            {resumeHero.eyebrow}
           </p>
           <h1 className="mt-4 font-serif text-5xl leading-none text-[var(--foreground)] sm:text-6xl">
             {resumeHero.title}
@@ -19,26 +18,6 @@ export function ResumeHero() {
             {resumeHero.summary}
           </p>
         </div>
-
-        <aside className="rounded-[2rem] border border-[color:var(--border)] bg-white/70 p-6 shadow-[0_24px_60px_rgba(33,53,72,0.05)]">
-          <p className="text-xs uppercase tracking-[0.24em] text-[var(--secondary)]">
-            Contact
-          </p>
-          <p className="mt-4 text-base leading-7 text-[var(--foreground-muted)]">
-            {resumeHero.location}
-          </p>
-          <p className="mt-2 text-base leading-7 text-[var(--foreground-muted)]">
-            {resumeHero.contactLine}
-          </p>
-          <Link
-            href={resumeHero.linkHref}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-2 inline-flex text-base leading-7 text-[var(--primary)]"
-          >
-            {resumeHero.linkLabel}
-          </Link>
-        </aside>
       </div>
     </section>
   );

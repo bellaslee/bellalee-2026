@@ -36,7 +36,7 @@ export function ResumeSidebarNav({
                 aria-selected={isActive}
                 tabIndex={isActive ? 0 : -1}
                 onClick={() => startTransition(() => onSelectSection(item.id))}
-                className={`min-w-[230px] rounded-[1.5rem] border px-4 py-4 text-left transition-all duration-300 lg:min-w-0 ${
+                className={`min-w-[230px] cursor-pointer rounded-[1.5rem] border px-4 py-4 text-left transition-all duration-300 lg:min-w-0 ${
                   isActive
                     ? 'border-[color:var(--primary)] bg-[var(--primary)] text-[var(--background)] shadow-[0_20px_45px_rgba(28,41,133,0.18)]'
                     : 'border-[color:var(--border)] bg-[var(--surface)]/65 text-[var(--foreground)] hover:bg-white'
