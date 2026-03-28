@@ -15,8 +15,8 @@ export default function ArtPage() {
     <SitePage footerClassName="mt-8">
       <PageIntro
         eyebrow="Artwork"
-        title="A gallery of character studies and portraits."
-        description="A collection of drawings and paintings I want to keep together in one place, ordered by when they were made."
+        title="Sketches, drawings, and paintings."
+        description="A collection of recent (and all-time favorite) pieces."
       />
 
       <ArtGallery art={artEntries} />
