@@ -25,7 +25,7 @@ export function ResumeHero() {
           </p>
           <p className="mt-4 text-base leading-7 text-[var(--foreground-muted)]">
             An explorable resume designed to show experience, technical
-            thinking, impact, and depth of capability in a calmer, more
+            thinking, impact, and depth of skill in a calmer, more
             product-like format.
           </p>
         </aside>

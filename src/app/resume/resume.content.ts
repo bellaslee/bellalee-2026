@@ -1,9 +1,6 @@
 export type SectionId =
-  | 'overview'
   | 'experience'
   | 'case-studies'
-  | 'skills'
-  | 'writing'
   | 'education-certifications';
 
 export type NavItem = {
@@ -21,20 +18,34 @@ export type ExperienceItem = {
   context: string[];
   responsibilities: string[];
   impact: string[];
-  capabilities: string[];
+  skills: string[];
   caseStudyHref: string;
+};
+
+export type CaseStudyItem = {
+  title: string;
+  problem: string;
+  constraints: string;
+  role: string;
+  href: string;
+};
+
+export type EducationItem = {
+  title: string;
+  institution: string;
+  detail: string;
+};
+
+export type CertificationItem = {
+  title: string;
+  status: string;
 };
 
 export const navItems: NavItem[] = [
   {
-    id: 'overview',
-    label: 'Overview',
-    summary: 'Positioning, strengths, and current focus.',
-  },
-  {
     id: 'experience',
     label: 'Experience',
-    summary: 'Expandable role cards with impact and capability signals.',
+    summary: 'Expandable role cards with impact and skill signals.',
   },
   {
     id: 'case-studies',
@@ -42,43 +53,10 @@ export const navItems: NavItem[] = [
     summary: 'Problem framing, tradeoffs, and delivery examples.',
   },
   {
-    id: 'skills',
-    label: 'Skills',
-    summary: 'Clustered strengths across technical and collaborative work.',
-  },
-  {
-    id: 'writing',
-    label: 'Writing / Notes',
-    summary: 'Reflective writing and ongoing technical thinking.',
-  },
-  {
     id: 'education-certifications',
     label: 'Education & Certifications',
     summary: 'Academic background and structured learning milestones.',
   },
-];
-
-export const overviewStats = [
-  {
-    label: 'Years in consulting-adjacent work',
-    value: '3',
-  },
-  {
-    label: 'Core domains',
-    value: 'Platform enablement, system architecture, product management',
-  },
-  {
-    label: 'Current learning focus',
-    value: 'Architecture, Salesforce, AI workflows',
-  },
-];
-
-export const keyStrengths = [
-  'System design thinking',
-  'Stakeholder communication',
-  'Ambiguity navigation',
-  'Rapid onboarding',
-  'Clear technical storytelling',
 ];
 
 export const experienceItems: ExperienceItem[] = [
@@ -102,7 +80,7 @@ export const experienceItems: ExperienceItem[] = [
       'Produce executive decision decks and reports that drive approval of vendor selection, roadmap, and process decisions.',
       'Maintain backlogs, delivery plans, and RAID logs, improving deliverable turnaround time by 10% across the engagement team.',
     ],
-    capabilities: [
+    skills: [
       'product requirements',
       'roadmap planning',
       'AI workflows',
@@ -131,7 +109,7 @@ export const experienceItems: ExperienceItem[] = [
       'Analyzed digital engagement metrics to produce monthly reports that informed content prioritization and communications planning.',
       'Created more consistent communication practices across channels and team processes.',
     ],
-    capabilities: [
+    skills: [
       'technical storytelling',
       'information architecture',
       'analytics',
@@ -160,7 +138,7 @@ export const experienceItems: ExperienceItem[] = [
       'Created operating structure that made leadership transitions and team coordination more sustainable.',
       'Established design standards and workflows that improved consistency and execution across the team.',
     ],
-    capabilities: [
+    skills: [
       'leadership',
       'governance',
       'campaign strategy',
@@ -188,7 +166,7 @@ export const experienceItems: ExperienceItem[] = [
       'Improved process consistency for private-bank onboarding and servicing workflows.',
       'Strengthened implementation support through clear enablement materials and platform configuration.',
     ],
-    capabilities: [
+    skills: [
       'Salesforce',
       'automation design',
       'documentation',
@@ -216,7 +194,7 @@ export const experienceItems: ExperienceItem[] = [
       'Improved team coordination and delivery structure across student contributors.',
       'Balanced technical website maintenance with research-informed UX work.',
     ],
-    capabilities: [
+    skills: [
       'UX research',
       'team leadership',
       'web development',
@@ -244,7 +222,7 @@ export const experienceItems: ExperienceItem[] = [
       'Built a sustainable operating model for independent creative work.',
       'Strengthened decision-making through data-informed experimentation and iteration.',
     ],
-    capabilities: [
+    skills: [
       'analytics',
       'business operations',
       'creative strategy',
@@ -254,11 +232,11 @@ export const experienceItems: ExperienceItem[] = [
   },
 ];
 
-export const experienceFilters = Array.from(
-  new Set(experienceItems.flatMap((item) => item.capabilities)),
+export const experienceSkillFilters = Array.from(
+  new Set(experienceItems.flatMap((item) => item.skills)),
 ).sort();
 
-export const caseStudies = [
+export const caseStudies: CaseStudyItem[] = [
   {
     title: 'Interactive Resume Experience',
     problem:
@@ -277,69 +255,9 @@ export const caseStudies = [
     role: 'Defined the planning structure and tied it to concrete career themes like architecture and platform fluency.',
     href: '/roadmap',
   },
-  {
-    title: 'Working Notes and Digital Garden',
-    problem:
-      'Create a place for unfinished technical thinking that still communicates rigor and curiosity.',
-    constraints:
-      'Needed a format that could hold essays, fragments, and experiments without requiring everything to be polished.',
-    role: 'Used writing as both synthesis practice and a public-facing artifact of how I reason through work.',
-    href: 'https://garden.bellalee.com',
-  },
 ];
 
-export const skillClusters = [
-  {
-    title: 'Industries',
-    items: ['Legal', 'Financial services'],
-  },
-  {
-    title: 'Technical',
-    items: [
-      'API design',
-      'Debugging complex systems',
-      'Onboarding into legacy codebases',
-      'Integration thinking',
-      'Architecture tradeoff analysis',
-    ],
-  },
-  {
-    title: 'Collaboration & Leadership',
-    items: [
-      'Technical storytelling',
-      'Aligning stakeholders',
-      'Mentoring through documentation',
-      'Cross-functional translation',
-      'Scope and prioritization clarity',
-    ],
-  },
-];
-
-export const writingItems = [
-  {
-    title: 'Technical reflections and unfinished thinking',
-    description:
-      'A digital garden for essays, experiments, working notes, and ideas that are still taking shape.',
-    href: 'https://garden.bellalee.com',
-    cta: 'Visit the notes archive',
-  },
-  {
-    title: 'Featured thread: AI workflows',
-    description:
-      'Notes on making AI-assisted drafting and implementation more repeatable, useful, and grounded in real work.',
-    href: 'https://garden.bellalee.com',
-    cta: 'Read workflow notes',
-  },
-  {
-    title: 'Featured thread: architecture learning',
-    description:
-      'Ongoing writing that connects systems thinking, constraints, and practical design tradeoffs.',
-    href: 'https://garden.bellalee.com',
-    cta: 'Read architecture notes',
-  },
-];
-
-export const educationItems = [
+export const educationItems: EducationItem[] = [
   {
     title: 'Bachelor of Arts in Sociology',
     institution: 'University of California, Berkeley',
@@ -354,7 +272,7 @@ export const educationItems = [
   },
 ];
 
-export const certificationItems = [
+export const certificationItems: CertificationItem[] = [
   {
     title: 'Salesforce Administrator',
     status: 'In progress',

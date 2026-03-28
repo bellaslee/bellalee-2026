@@ -1,0 +1,51 @@
+import { SurfacePanel } from '../../_components/surface-panel';
+import { certificationItems, educationItems } from '../resume.content';
+
+export function ResumeEducationSection() {
+  return (
+    <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="grid gap-5">
+        {educationItems.map((item) => (
+          <SurfacePanel
+            key={item.title}
+            as="article"
+            className="rounded-[1.75rem] bg-[var(--surface)]/75"
+          >
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <h3 className="font-serif text-3xl leading-none text-[var(--foreground)]">
+                {item.title}
+              </h3>
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
+                {item.institution}
+              </p>
+            </div>
+            <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
+              {item.detail}
+            </p>
+          </SurfacePanel>
+        ))}
+      </div>
+
+      <SurfacePanel as="aside" variant="white" className="rounded-[1.75rem]">
+        <p className="text-xs uppercase tracking-[0.22em] text-[var(--secondary)]">
+          Certifications and milestones
+        </p>
+        <div className="mt-5 grid gap-4">
+          {certificationItems.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-[1.25rem] border border-[color:var(--border)] bg-[var(--surface)]/70 p-4"
+            >
+              <p className="text-sm font-medium text-[var(--foreground)]">
+                {item.title}
+              </p>
+              <p className="mt-2 text-sm text-[var(--foreground-muted)]">
+                {item.status}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SurfacePanel>
+    </div>
+  );
+}
