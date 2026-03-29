@@ -45,16 +45,16 @@ export const homeHeroContent: HomeHeroContent = {
   description:
     'I am a consultant, artist, writer, and lifelong learner. This site is a place for the projects, photos, and ongoing learning that matter to me.',
   currentlyExploringLabel: 'Currently Working On',
-  currentlyExploringTitle: 'Adding more personality to this website',
+  currentlyExploringTitle: 'Adding project documentation',
   details: [
     {
       title: 'Context',
-      body: "I've got the rough framework down, but I think it still feels too ordinary.",
+      body: "I've got most of my website architecture built out, so all that's left is to add more content.",
       surface: 'surface',
     },
     {
       title: 'Approach',
-      body: 'Creating doodles that appear as you scroll down the page.',
+      body: "Heads down grindin', I guess.",
       surface: 'white',
     },
   ],
