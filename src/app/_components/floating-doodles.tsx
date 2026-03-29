@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useSyncExternalStore } from 'react';
 import gsap from 'gsap';
 
 type DoodleDepth = 'back' | 'front';
@@ -30,30 +30,12 @@ type AnchorSlot = {
   yMax: number;
 };
 
+type FloatingDoodlesProps = {
+  assetCandidates: string[];
+};
+
 const DOODLE_COUNT = 7;
 const MOBILE_BREAKPOINT = 768;
-const DOODLE_ASSET_CANDIDATES = [
-  '/assets/doodle1.png',
-  '/assets/doodle2.png',
-  '/assets/doodle3.png',
-  '/assets/doodle4.png',
-  '/assets/doodle5.png',
-  '/assets/doodle6.png',
-  '/assets/doodle7.png',
-  '/assets/doodle8.png',
-  '/assets/doodle9.png',
-  '/assets/doodle10.png',
-  '/assets/doodle11.png',
-  '/assets/doodle12.png',
-  '/assets/doodle13.png',
-  '/assets/doodle14.png',
-  '/assets/doodle15.png',
-  '/assets/doodle16.png',
-  '/assets/doodle17.png',
-  '/assets/doodle18.png',
-  '/assets/doodle19.png',
-  '/assets/doodle20.png',
-].filter((path) => path.endsWith('.png'));
 
 const ANCHOR_SLOTS: AnchorSlot[] = [
   { xMin: 0.03, xMax: 0.14, yMin: 0.08, yMax: 0.18 },
@@ -90,17 +72,17 @@ function shuffle<T>(items: T[]) {
   return next;
 }
 
-function createScene(pathKey: string): DoodleSceneItem[] {
-  if (DOODLE_ASSET_CANDIDATES.length === 0) {
+function createScene(pathKey: string, assetCandidates: string[]): DoodleSceneItem[] {
+  if (assetCandidates.length === 0) {
     return [];
   }
 
   const slots = shuffle(ANCHOR_SLOTS);
   const selectedSources =
-    DOODLE_ASSET_CANDIDATES.length >= DOODLE_COUNT
-      ? shuffle(DOODLE_ASSET_CANDIDATES).slice(0, DOODLE_COUNT)
+    assetCandidates.length >= DOODLE_COUNT
+      ? shuffle(assetCandidates).slice(0, DOODLE_COUNT)
       : Array.from({ length: DOODLE_COUNT }, () =>
-          pickRandom(DOODLE_ASSET_CANDIDATES),
+          pickRandom(assetCandidates),
         );
 
   return Array.from({ length: DOODLE_COUNT }, (_, index) => {
@@ -126,9 +108,17 @@ function createScene(pathKey: string): DoodleSceneItem[] {
   });
 }
 
-export function FloatingDoodles() {
+export function FloatingDoodles({ assetCandidates }: FloatingDoodlesProps) {
   const pathname = usePathname();
-  const scene = useMemo(() => createScene(pathname), [pathname]);
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const scene = useMemo(
+    () => (isMounted ? createScene(pathname, assetCandidates) : []),
+    [assetCandidates, isMounted, pathname],
+  );
   const containerRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
 
