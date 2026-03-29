@@ -12,20 +12,20 @@ export function ResumeEducationSection() {
             className="rounded-[1.75rem] bg-[var(--surface)]/75"
           >
             <div className="flex flex-col gap-2">
-              <h3 className="font-serif text-3xl leading-none text-[var(--foreground)]">
+              <h3 className="font-serif text-2xl leading-none text-[var(--foreground)] sm:text-3xl">
                 {item.title}
               </h3>
               {item.period ? (
-                <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[var(--secondary)] sm:text-sm sm:tracking-[0.2em]">
                   {item.period}
                 </p>
               ) : null}
             </div>
-            <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
+            <p className="mt-4 text-sm leading-7 text-[var(--foreground-muted)] sm:text-base sm:leading-8">
               {item.institution}
             </p>
             {item.detail ? (
-              <p className="mt-4 text-base leading-8 text-[var(--foreground-muted)]">
+              <p className="mt-4 text-sm leading-7 text-[var(--foreground-muted)] sm:text-base sm:leading-8">
                 {item.detail}
               </p>
             ) : null}

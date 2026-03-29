@@ -15,7 +15,9 @@ export function ResumeSkillChip({
 
   if (!onClick) {
     return (
-      <span className={`rounded-full border px-4 py-2 text-sm ${classes}`}>
+      <span
+        className={`rounded-full border px-4 py-2 text-sm leading-5 whitespace-normal text-left ${classes}`}
+      >
         {label}
       </span>
     );
@@ -28,7 +30,7 @@ export function ResumeSkillChip({
         event.stopPropagation();
         onClick?.();
       }}
-      className={`rounded-full border px-4 py-2 text-sm transition-colors ${classes}`}
+      className={`rounded-full border px-4 py-2 text-left text-sm leading-5 whitespace-normal transition-colors ${classes}`}
     >
       {label}
     </button>

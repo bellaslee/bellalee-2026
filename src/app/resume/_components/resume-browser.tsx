@@ -10,7 +10,7 @@ export function ResumeBrowser() {
   const [activeSection, setActiveSection] = useState<SectionId>('experience');
 
   return (
-    <section className="grid gap-8 py-10 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)]">
+    <section className="grid gap-6 py-8 sm:gap-8 sm:py-10 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)]">
       <ResumeSidebarNav
         activeSection={activeSection}
         onSelectSection={setActiveSection}

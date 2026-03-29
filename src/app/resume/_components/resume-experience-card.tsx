@@ -23,18 +23,18 @@ export function ResumeExperienceCard({
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-[var(--secondary)]">
+          <p className="text-xs uppercase tracking-[0.16em] text-[var(--secondary)] sm:text-sm sm:tracking-[0.2em]">
             {item.company} - {item.location}
           </p>
-          <h3 className="mt-2 font-serif text-3xl leading-none text-[var(--foreground)]">
+          <h3 className="mt-2 font-serif text-2xl leading-none text-[var(--foreground)] sm:text-3xl">
             {item.role}
           </h3>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--foreground-muted)]">
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--foreground-muted)] sm:mt-4 sm:text-base sm:leading-7">
             {item.summary}
           </p>
         </div>
-        <div className="text-right">
-          <p className="whitespace-nowrap text-sm text-[var(--foreground-muted)]">
+        <div className="sm:text-right">
+          <p className="text-sm text-[var(--foreground-muted)] sm:whitespace-nowrap">
             {item.period}
           </p>
         </div>
@@ -79,7 +79,7 @@ export function ResumeExperienceCard({
                 event.stopPropagation();
                 onToggle();
               }}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5 sm:h-10 sm:w-10"
               aria-expanded={isExpanded}
               aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.role}`}
             >
@@ -95,7 +95,7 @@ export function ResumeExperienceCard({
               event.stopPropagation();
               onToggle();
             }}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--primary)] bg-[var(--primary)] text-lg font-medium text-[var(--background)] transition-transform duration-200 hover:-translate-y-0.5 sm:h-10 sm:w-10"
             aria-expanded={isExpanded}
             aria-label={`Expand ${item.role}`}
           >
