@@ -39,7 +39,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
           >
             <span className="inline-flex items-center gap-1">
               <span>{link.label}</span>
-              {link.label === 'Notes' ? (
+              {link.icon === 'external' ? (
                 <FontAwesomeIcon
                   icon={faArrowUpRightFromSquare}
                   aria-hidden="true"
