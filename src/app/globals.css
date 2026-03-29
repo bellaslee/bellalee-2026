@@ -1,12 +1,12 @@
-@import "tailwindcss";
-@import "lightgallery/css/lightgallery.css";
-@import "lightgallery/css/lg-zoom.css";
+@import 'tailwindcss';
+@import 'lightgallery/css/lightgallery.css';
+@import 'lightgallery/css/lg-zoom.css';
 
 :root {
   --background: #f8f7f3;
   --foreground: #213548;
   --foreground-muted: #50606e;
-  --surface: #f2efe8;
+  --surface: rgba(242, 239, 232, 0.5);
   --surface-muted: rgba(208, 215, 244, 0.38);
   --primary: #1c2985;
   --secondary: #707ab3;
@@ -50,8 +50,16 @@ a {
 
 .site-shell {
   background:
-    radial-gradient(circle at top left, rgba(208, 215, 244, 0.68), transparent 34%),
-    radial-gradient(circle at top right, rgba(185, 177, 163, 0.22), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(208, 215, 244, 0.68),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(185, 177, 163, 0.22),
+      transparent 28%
+    ),
     linear-gradient(180deg, #f8f7f3 0%, #f4f1ea 100%);
 }
 
@@ -61,10 +69,14 @@ a {
 }
 
 .card-sheen::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.45), transparent 45%);
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.45),
+    transparent 45%
+  );
   pointer-events: none;
 }
 
