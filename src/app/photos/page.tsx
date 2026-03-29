@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PhotosPage() {
   return (
-    <SitePage footerClassName="mt-8">
+    <SitePage footerClassName="mt-8" showDoodles={false}>
       <PageIntro
         eyebrow="Camera Roll"
         title="The most beautiful moments in life."

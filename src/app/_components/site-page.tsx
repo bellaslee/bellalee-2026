@@ -7,16 +7,18 @@ type SitePageProps = {
   children: ReactNode;
   footerClassName?: string;
   navClassName?: string;
+  showDoodles?: boolean;
 };
 
 export function SitePage({
   children,
   footerClassName = '',
   navClassName = 'mb-12',
+  showDoodles = true,
 }: SitePageProps) {
   return (
     <div className="site-shell relative min-h-screen overflow-x-clip">
-      <FloatingDoodlesLayer />
+      {showDoodles ? <FloatingDoodlesLayer /> : null}
       <main className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 py-6 sm:px-8 lg:px-12">
         <SiteNav className={navClassName} />
         {children}
