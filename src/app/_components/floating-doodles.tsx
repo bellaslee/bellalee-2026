@@ -72,7 +72,10 @@ function shuffle<T>(items: T[]) {
   return next;
 }
 
-function createScene(pathKey: string, assetCandidates: string[]): DoodleSceneItem[] {
+function createScene(
+  pathKey: string,
+  assetCandidates: string[],
+): DoodleSceneItem[] {
   if (assetCandidates.length === 0) {
     return [];
   }
@@ -81,9 +84,7 @@ function createScene(pathKey: string, assetCandidates: string[]): DoodleSceneIte
   const selectedSources =
     assetCandidates.length >= DOODLE_COUNT
       ? shuffle(assetCandidates).slice(0, DOODLE_COUNT)
-      : Array.from({ length: DOODLE_COUNT }, () =>
-          pickRandom(assetCandidates),
-        );
+      : Array.from({ length: DOODLE_COUNT }, () => pickRandom(assetCandidates));
 
   return Array.from({ length: DOODLE_COUNT }, (_, index) => {
     const slot = slots[index % slots.length];
@@ -102,8 +103,7 @@ function createScene(pathKey: string, assetCandidates: string[]): DoodleSceneIte
       orbitPhase: randomBetween(0, Math.PI * 2),
       orbitSpeed: randomBetween(0.35, 0.7),
       lag: randomBetween(0.08, 0.16),
-      opacity:
-        depth === 'front' ? randomBetween(0.7, 0.9) : randomBetween(0.5, 0.78),
+      opacity: randomBetween(0.3, 0.6),
     };
   });
 }
