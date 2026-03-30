@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {
   experienceSkillFilters,
   experienceItems,
-} from '../resume.content';
+} from '@/content/resume';
 import { ResumeExperienceCard } from './resume-experience-card';
 import { ResumeSkillChip } from './resume-skill-chip';
 

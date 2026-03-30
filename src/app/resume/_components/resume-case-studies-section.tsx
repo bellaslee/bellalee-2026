@@ -1,5 +1,5 @@
+import { caseStudies } from '@/content/resume';
 import { SurfacePanel } from '../../_components/surface-panel';
-import { caseStudies } from '../resume.content';
 import { ResumeArrowLink } from './resume-arrow-link';
 
 export function ResumeCaseStudiesSection() {

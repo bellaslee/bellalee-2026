@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import {
-  getProjectPost,
-  getProjectPostSlugs,
-} from '@/app/content/projects';
 import { PageIntro } from '@/app/_components/page-intro';
 import { SitePage } from '@/app/_components/site-page';
 import { SurfacePanel } from '@/app/_components/surface-panel';
+import {
+  getProjectPost,
+  getProjectPostSlugs,
+  projectPostPageContent,
+} from '@/content/projects';
 
 type ProjectPostPageProps = {
   params: Promise<{
@@ -37,7 +38,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: 'Project Not Found | Bella Lee',
+      title: projectPostPageContent.notFoundTitle,
     };
   }
 
@@ -62,10 +63,10 @@ export default async function ProjectPostPage({
   return (
     <SitePage footerClassName="mt-16">
       <PageIntro
-        eyebrow="Projects"
+        eyebrow={projectPostPageContent.eyebrow}
         title={metadata.title}
         description={metadata.summary}
-        asideEyebrow="Published"
+        asideEyebrow={projectPostPageContent.publishedLabel}
         asideDescription={formatPublishedDate(metadata.publishedAt)}
       />
 

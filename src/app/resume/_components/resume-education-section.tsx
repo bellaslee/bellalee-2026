@@ -1,5 +1,5 @@
+import { educationItems, skillGroups } from '@/content/resume';
 import { SurfacePanel } from '../../_components/surface-panel';
-import { educationItems, skillGroups } from '../resume.content';
 
 export function ResumeEducationSection() {
   return (

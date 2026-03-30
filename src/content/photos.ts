@@ -7,6 +7,19 @@ export type PhotoEntry = {
   height: number;
 };
 
+export const photosPageMetadata = {
+  title: 'Photos | Bella Lee',
+  description:
+    'A scrollable photo diary of landscape-oriented frames, arranged as a quiet overlapping stack.',
+};
+
+export const photosPageIntro = {
+  eyebrow: 'Camera Roll',
+  title: 'The most beautiful moments in life.',
+  description:
+    'I like capturing photos on my digital camera that emphasize the weight of a place and a moment.',
+};
+
 export const photoEntries: PhotoEntry[] = [
   {
     src: '/photos/rainy-home.JPG',

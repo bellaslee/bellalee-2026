@@ -1,22 +1,18 @@
 import type { Metadata } from 'next';
+import { artEntries, artPageIntro, artPageMetadata } from '@/content/art';
 import { PageIntro } from '../_components/page-intro';
 import { SitePage } from '../_components/site-page';
 import { ArtGallery } from './_components/art-gallery';
-import { artEntries } from './art.content';
 
-export const metadata: Metadata = {
-  title: 'Sketchbook | Bella Lee',
-  description:
-    'A gallery of illustration and portrait studies, arranged as a quiet archive of recent work.',
-};
+export const metadata: Metadata = artPageMetadata;
 
 export default function ArtPage() {
   return (
     <SitePage footerClassName="mt-8">
       <PageIntro
-        eyebrow="Sketchbook"
-        title="Sketches, drawings, and paintings."
-        description="A collection of recent (and all-time favorite) pieces."
+        eyebrow={artPageIntro.eyebrow}
+        title={artPageIntro.title}
+        description={artPageIntro.description}
       />
 
       <ArtGallery art={artEntries} />

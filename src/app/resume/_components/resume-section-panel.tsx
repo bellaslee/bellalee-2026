@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { navItems, type SectionId } from '../resume.content';
+import { navItems, type SectionId } from '@/content/resume';
 
 export function ResumeSectionPanel({
   activeSection,

@@ -1,22 +1,22 @@
 import type { Metadata } from 'next';
+import {
+  photoEntries,
+  photosPageIntro,
+  photosPageMetadata,
+} from '@/content/photos';
 import { PageIntro } from '../_components/page-intro';
 import { SitePage } from '../_components/site-page';
 import { PhotoStack } from './_components/photo-stack';
-import { photoEntries } from './photos.content';
 
-export const metadata: Metadata = {
-  title: 'Photos | Bella Lee',
-  description:
-    'A scrollable photo diary of landscape-oriented frames, arranged as a quiet overlapping stack.',
-};
+export const metadata: Metadata = photosPageMetadata;
 
 export default function PhotosPage() {
   return (
     <SitePage footerClassName="mt-8" showDoodles={false}>
       <PageIntro
-        eyebrow="Camera Roll"
-        title="The most beautiful moments in life."
-        description="I like capturing photos on my digital camera that emphasize the weight of a place and a moment."
+        eyebrow={photosPageIntro.eyebrow}
+        title={photosPageIntro.title}
+        description={photosPageIntro.description}
       />
 
       <PhotoStack photos={photoEntries} />

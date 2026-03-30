@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
+import type { PhotoEntry } from '@/content/photos';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type { PhotoEntry } from '../photos.content';
 
 type PhotoStackProps = {
   photos: PhotoEntry[];

@@ -1,5 +1,5 @@
+import { type ExperienceItem } from '@/content/resume';
 import { SurfacePanel } from '../../_components/surface-panel';
-import { type ExperienceItem } from '../resume.content';
 import { ResumeArrowLink } from './resume-arrow-link';
 import { ResumeBulletList } from './resume-bullet-list';
 import { ResumeSkillChip } from './resume-skill-chip';

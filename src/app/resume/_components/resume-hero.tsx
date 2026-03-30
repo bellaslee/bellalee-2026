@@ -1,4 +1,4 @@
-import { resumeHero } from '../resume.content';
+import { resumeHero } from '@/content/resume';
 
 export function ResumeHero() {
   return (

@@ -25,7 +25,7 @@
   for repeated elements.
 - Prefer a three-layer split for substantial pages when it helps clarity: route
   composition (`<route>/page.tsx`), structured content/data
-  (`<route>/<route-name>.content.ts`), and small presentational section
+  (`src/content/<route-name>.ts` or `src/content/<section>/<entry>.mdx`), and small presentational section
   components (`<route>/_components/<route-name>-<section-name>.tsx`).
 - Use TypeScript types for props and structured data. Prefer simple local types
   over overly abstract generics.
@@ -71,7 +71,7 @@
 - If a task requires MDX, first wire it into Next.js intentionally, update the
   relevant config, and document the content location and authoring pattern.
 - Keep MDX content separate from presentational components. If you introduce
-  MDX, define where content files live and how shared MDX components are
+  MDX, prefer `src/content`, define how shared MDX components are
   registered.
 
 ## State Management

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ProjectPostListItem } from '@/app/content/projects';
+import type { ProjectPostListItem } from '@/content/projects';
 
 type ProjectPostCardProps = {
   post: ProjectPostListItem;

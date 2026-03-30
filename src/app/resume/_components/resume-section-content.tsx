@@ -1,4 +1,4 @@
-import { type SectionId } from '../resume.content';
+import { type SectionId } from '@/content/resume';
 import { ResumeCaseStudiesSection } from './resume-case-studies-section';
 import { ResumeEducationSection } from './resume-education-section';
 import { ResumeExperienceSection } from './resume-experience-section';

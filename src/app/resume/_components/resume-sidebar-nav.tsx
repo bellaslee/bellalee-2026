@@ -1,8 +1,8 @@
 'use client';
 
 import { startTransition } from 'react';
+import { navItems, type SectionId } from '@/content/resume';
 import { SurfacePanel } from '../../_components/surface-panel';
-import { navItems, type SectionId } from '../resume.content';
 
 export function ResumeSidebarNav({
   activeSection,

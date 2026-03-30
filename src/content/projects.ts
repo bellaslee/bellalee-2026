@@ -20,7 +20,30 @@ type ProjectPostModule = {
   metadata: ProjectPostMetadata;
 };
 
-const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/app/content/projects');
+export const projectsPageMetadata = {
+  title: 'Projects | Bella Lee',
+  description:
+    'Project writeups covering context, implementation decisions, and what each build taught me.',
+};
+
+export const projectsPageIntro = {
+  eyebrow: 'Projects',
+  title: 'Project case studies and build notes.',
+  description:
+    'A growing set of project writeups covering problem framing, implementation decisions, and the lessons that were worth keeping.',
+};
+
+export const projectsPageEmptyState = {
+  message: 'The first project post is still being drafted.',
+};
+
+export const projectPostPageContent = {
+  eyebrow: 'Projects',
+  publishedLabel: 'Published',
+  notFoundTitle: 'Project Not Found | Bella Lee',
+};
+
+const PROJECTS_DIRECTORY = path.join(process.cwd(), 'src/content/projects');
 
 async function getProjectSlugs() {
   const entries = await readdir(PROJECTS_DIRECTORY, { withFileTypes: true });
@@ -32,7 +55,7 @@ async function getProjectSlugs() {
 }
 
 async function importProjectPost(slug: string): Promise<ProjectPostModule> {
-  return import(`@/app/content/projects/${slug}.mdx`) as Promise<ProjectPostModule>;
+  return import(`@/content/projects/${slug}.mdx`) as Promise<ProjectPostModule>;
 }
 
 export async function getProjectPosts(): Promise<ProjectPostListItem[]> {

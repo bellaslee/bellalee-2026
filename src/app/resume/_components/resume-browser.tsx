@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { type SectionId } from '../resume.content';
+import { type SectionId } from '@/content/resume';
 import { ResumeSectionContent } from './resume-section-content';
 import { ResumeSectionPanel } from './resume-section-panel';
 import { ResumeSidebarNav } from './resume-sidebar-nav';

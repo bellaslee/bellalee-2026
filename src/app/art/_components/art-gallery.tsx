@@ -2,13 +2,13 @@
 
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
+import type { ArtEntry } from '@/content/art';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type { ArtEntry } from '../art.content';
 
 type ArtGalleryProps = {
   art: ArtEntry[];

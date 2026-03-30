@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { SectionHeading } from './section-heading';
 import {
   featureCards,
   homeActions,
@@ -12,7 +11,8 @@ import {
   type HomeFeature,
   type HeroDetail as HeroDetailContent,
   type LearningTopic,
-} from './home.content';
+} from '@/content/home';
+import { SectionHeading } from './section-heading';
 import { SurfaceLinkCard, SurfacePanel } from './surface-panel';
 
 function HomeActionLink({ href, label, variant }: HomeAction) {

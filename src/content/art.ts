@@ -7,6 +7,18 @@ export type ArtEntry = {
   height: number;
 };
 
+export const artPageMetadata = {
+  title: 'Sketchbook | Bella Lee',
+  description:
+    'A gallery of illustration and portrait studies, arranged as a quiet archive of recent work.',
+};
+
+export const artPageIntro = {
+  eyebrow: 'Sketchbook',
+  title: 'Sketches, drawings, and paintings.',
+  description: 'A collection of recent (and all-time favorite) pieces.',
+};
+
 export const artEntries: ArtEntry[] = [
   {
     src: '/art/260327_madara_oil-pastel.jpg',
