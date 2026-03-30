@@ -88,14 +88,15 @@ function createScene(
 
   return Array.from({ length: DOODLE_COUNT }, (_, index) => {
     const slot = slots[index % slots.length];
-    const depth: DoodleDepth = index < 2 ? 'front' : 'back';
+    const depth: DoodleDepth = Math.random() < 0.35 ? 'front' : 'back';
+
 
     return {
       id: `${pathKey}-doodle-${index}-${Math.round(Math.random() * 1_000_000)}`,
       src: selectedSources[index],
       anchorX: randomBetween(slot.xMin, slot.xMax),
       anchorY: randomBetween(slot.yMin, slot.yMax),
-      size: randomBetween(92, 180),
+      size: randomBetween(100, 180),
       depth,
       floatRadius: randomBetween(16, 34),
       parallaxFactor: randomBetween(0.16, 0.38),
@@ -103,7 +104,8 @@ function createScene(
       orbitPhase: randomBetween(0, Math.PI * 2),
       orbitSpeed: randomBetween(0.35, 0.7),
       lag: randomBetween(0.08, 0.16),
-      opacity: randomBetween(0.3, 0.6),
+      opacity:
+        depth === 'front' ? randomBetween(0.7, 0.9) : randomBetween(0.5, 0.78),
     };
   });
 }
