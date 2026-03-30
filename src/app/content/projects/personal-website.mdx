@@ -1,0 +1,39 @@
+export const metadata = {
+  title: 'Personal Website',
+  summary:
+    'Reworking my personal site into a calmer, more editorial home for projects, photos, and in-progress learning.',
+  publishedAt: '2026-03-29',
+  role: 'Design + Development',
+  tags: ['Next.js', 'TypeScript', 'Tailwind'],
+};
+
+# Why this project existed
+
+I wanted a portfolio site that felt more like a real personal space and less
+like a generic professional template. The goal was to make room for a few
+different kinds of work while keeping the overall structure simple enough to
+maintain.
+
+## What I was optimizing for
+
+- A visual direction that felt editorial rather than corporate
+- Route structure that stays easy to extend as new sections are added
+- Components that are reusable without turning every styling choice into an API
+
+## Build notes
+
+The site uses the Next.js App Router with Server Components by default. Shared
+layout pieces live close to the app tree, and content-heavy pages keep their
+copy in separate content modules so the route files can stay mostly focused on
+composition.
+
+For this project-post setup, I also wanted writing a new case study to feel
+lightweight. Putting each post in its own MDX file makes the content easy to
+author, while a small loader utility keeps the index and dynamic routes
+generated from the filesystem.
+
+## What I learned
+
+The strongest portfolio pages are usually the ones that make future updates
+easy. Good structure is part of the design work, not something separate from
+it.
