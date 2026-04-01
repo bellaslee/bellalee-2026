@@ -1,39 +1,66 @@
 export const metadata = {
   title: 'Personal Website',
   summary:
-    'Reworking my personal site into a calmer, more editorial home for projects, photos, and in-progress learning.',
+    'Built a personal portfolio using Next.js App Router and MDX that balances maintainable architecture with a highly personal visual style.',
   publishedAt: '2026-03-29',
-  role: 'Design + Development',
-  tags: ['Next.js', 'TypeScript', 'Tailwind'],
+  role: 'Designer + Developer',
+  tags: ['frontend development', 'system architecture'],
 };
 
-# Why this project existed
+## Context
 
-I wanted a portfolio site that felt more like a real personal space and less
-like a generic professional template. The goal was to make room for a few
-different kinds of work while keeping the overall structure simple enough to
-maintain.
+I’ve been doing more hands-on development at work, so I wanted to try applying
+new workflows I learned in a personal project without constraints.
 
-## What I was optimizing for
+Many portfolio sites tend to prioritize either aesthetics (often harder to
+maintain) or structure (but feel generic). I wanted to build a system that could
+do both.
 
-- A visual direction that felt editorial rather than corporate
-- Route structure that stays easy to extend as new sections are added
-- Components that are reusable without turning every styling choice into an API
+## Approach
 
-## Build notes
+### Stack
 
-The site uses the Next.js App Router with Server Components by default. Shared
-layout pieces live close to the app tree, and content-heavy pages keep their
-copy in separate content modules so the route files can stay mostly focused on
-composition.
+- TypeScript
+- Next.js
+- Tailwind CSS
+- Visual Studio Code
+- Codex + ChatGPT (used as accelerators, not decision-makers)
 
-For this project-post setup, I also wanted writing a new case study to feel
-lightweight. Putting each post in its own MDX file makes the content easy to
-author, while a small loader utility keeps the index and dynamic routes
-generated from the filesystem.
+### Design Philosophy
 
-## What I learned
+I approached this project the same way I approach illustrations. I prefer to
+start with a rough visual direction, then refine in layers instead of fully
+wireframing upfront.
 
-The strongest portfolio pages are usually the ones that make future updates
-easy. Good structure is part of the design work, not something separate from
-it.
+The initial goal was a clean, porcelain-inspired aesthetic. However, early
+versions were too corporate-looking, so I introduced hand-drawn doodles from my
+sketchbook to bring in some personality. I designed this site to evolve so that
+new visual elements can be added incrementally without disrupting the system.
+
+### Key Decisions
+
+- Separated content from route composition to make updating copy and adding new
+  case studies fast and low-friction
+- Introduced hand-drawn visual elements from my sketchbook to avoid the
+  “template” portfolio look
+- Used server-side rendering for floating doodles to allow for easy updates and
+  additions
+- Used MDX and separate files for content to enable writing-focused workflow
+  instead of code-heavy updates
+
+## Outcome
+
+- A portfolio site that balances structure and personality
+- Flexible content system for adding case studies without friction
+- Maintainable architecture aligned with modern React patterns
+- New case studies can be added via MDX without modifying route logic
+
+### Takeaways
+
+1. Strong system design decisions matter more than tooling
+2. AI accelerates execution, but direction still determines quality (if I didn't
+   apply any judgment in the process, my portfolio site would look way too
+   generic)
+3. Maintainability should be designed upfront, not refactored in as an
+   afterthought (this was the downfall of many previous iterations of my
+   websites)

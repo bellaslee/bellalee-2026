@@ -84,9 +84,9 @@ export const identityPillarsHeading = 'Core focus areas';
 
 export const learningTopicsSectionContent: SectionHeadingContent = {
   eyebrow: 'Current Learning',
-  title: 'A compact view into the ideas shaping how I work and live.',
-  description:
+  title:
     'A snapshot of what I am focused on now and what I want to move into next.',
+  description: '',
 };
 
 export const featureCards: HomeFeature[] = [
@@ -123,34 +123,26 @@ export const learningTopics: LearningTopic[] = [
     title: 'Salesforce Administration and Development',
     tag: 'Career',
     current:
-      'Building fluency in configuration, data models, platform syntax, and certifications.',
+      'Building fluency in configuration, data models, and platform syntax.',
     next: 'Work through deeper implementation patterns and exam prep.',
   },
   {
     title: 'Product Management',
     tag: 'Career',
-    current:
-      'Studying prioritization, stakeholder alignment, and product discovery.',
+    current: 'Honing my discovery, design, and build skills.',
     next: 'Turn product thinking into reusable planning and scoping frameworks.',
-  },
-  {
-    title: 'System Architecture',
-    tag: 'Career',
-    current:
-      'Learning architecture patterns, scaling decisions, and technical tradeoffs.',
-    next: 'Apply those patterns through case studies and system design writeups.',
   },
   {
     title: 'Marathi',
     tag: 'Language',
     current:
       'Learning the alphabet and using basic Hindi as an accessible entry point.',
-    next: 'Build simple listening and speaking practice into the week.',
+    next: 'Practice more vocabulary, grammar, and pronunciation.',
   },
   {
     title: 'Bread-Baking',
     tag: 'Craft',
-    current: 'Practicing technique through repeat bakes and better dough feel.',
-    next: 'Refine consistency and document the recipes worth keeping.',
+    current: 'Practicing technique through repeat bakes.',
+    next: 'Eat a lot of bread and document the recipes worth keeping.',
   },
 ];

@@ -6,8 +6,8 @@
   --background: #f8f7f3;
   --foreground: #213548;
   --foreground-muted: #50606e;
-  --surface: rgba(242, 239, 232, 0.5);
-  --surface-muted: rgba(208, 215, 244, 0.38);
+  --surface: rgba(242, 239, 232, 0.75);
+  --surface-muted: rgba(208, 215, 244, 0.88);
   --primary: #1c2985;
   --secondary: #707ab3;
   --accent: #b9b1a3;

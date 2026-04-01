@@ -8,7 +8,7 @@ export const aboutPageIntro = {
   eyebrow: 'About',
   title: 'A peek into who I am.',
   description:
-    'I am currently a technical consultant at West Monroe, but more than that, I am also an artist, writer, and lifelong learner.',
+    'I take pride in my curiosity and eagerness to learn, and I look forward to getting to know myself, others, and the world better as I progress in my career.',
 };
 
 export const aboutSectionVariants = ['surface', 'muted', 'white'] as const;

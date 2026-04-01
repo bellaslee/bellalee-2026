@@ -73,12 +73,7 @@ export const experienceItems: ExperienceItem[] = [
     period: 'Sep. 2025 - Present',
     summary:
       'Support consulting work across product requirements, AI workflow planning, and delivery coordination for client engagements.',
-    contributions: [
-      'Author 100+ product and system requirements that determine roadmap scope, engineering estimates, and release sequencing for post-merger legal CRM vendor selection and implementation',
-      'Define financial services use cases for Agentforce, translate business requirements into AI workflows, and own product documentation to support go-to-market AI enablement strategy, reducing deployment time by 25%',
-      'Produce executive decision decks and reports that drive approval of vendor selection, roadmap, and process decisions',
-      'Maintain backlogs, delivery plans, and RAID logs, improving deliverable turnaround time by 10% across the engagement team',
-    ],
+    contributions: ['Coming soon'],
     skills: [
       'Salesforce',
       'AI enablement',
@@ -170,10 +165,12 @@ export const caseStudies: CaseStudyItem[] = [
   {
     title: 'Personal Website',
     context:
-      'Wanted to revamp my website to better reflect my taste and personality.',
-    approach: 'Applying what I learned at work to a personal project.',
-    outcome: 'This website!',
-    href: '',
+      'Wanted a portfolio that could balance expressive design with scalable architecture instead of choosing between personality and maintainability.',
+    approach:
+      'Built it with Next.js App Router and MDX, separating content from route composition and layering in hand-drawn visuals from my sketchbook.',
+    outcome:
+      'A portfolio that feels distinctly mine while staying easy to extend with new case studies and content.',
+    href: '/projects/personal-website',
   },
 ];
 
