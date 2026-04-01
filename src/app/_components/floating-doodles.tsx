@@ -90,7 +90,6 @@ function createScene(
     const slot = slots[index % slots.length];
     const depth: DoodleDepth = Math.random() < 0.35 ? 'front' : 'back';
 
-
     return {
       id: `${pathKey}-doodle-${index}-${Math.round(Math.random() * 1_000_000)}`,
       src: selectedSources[index],
@@ -105,7 +104,7 @@ function createScene(
       orbitSpeed: randomBetween(0.35, 0.7),
       lag: randomBetween(0.08, 0.16),
       opacity:
-        depth === 'front' ? randomBetween(0.7, 0.9) : randomBetween(0.5, 0.78),
+        depth === 'front' ? randomBetween(0.5, 0.8) : randomBetween(0.3, 0.58),
     };
   });
 }
