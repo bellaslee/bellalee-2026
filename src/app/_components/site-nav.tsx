@@ -23,7 +23,7 @@ const primaryLinks: PrimaryLink[] = [
   { href: '/photos', label: 'Camera Roll' },
   {
     href: 'https://garden.bellalee.com',
-    label: 'Notebook',
+    label: 'Digital Garden',
     icon: 'external',
   },
 ];

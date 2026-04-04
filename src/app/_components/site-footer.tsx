@@ -13,7 +13,7 @@ const footerLinks = [
   },
   {
     href: 'https://garden.bellalee.com',
-    label: 'Notes',
+    label: 'Digital Garden',
     icon: 'external' as const,
   },
   {
