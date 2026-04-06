@@ -24,7 +24,7 @@ export function ResumeExperienceCard({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.16em] text-[var(--secondary)] sm:text-sm sm:tracking-[0.2em]">
-            {item.company} - {item.location}
+            {item.company}
           </p>
           <h3 className="mt-2 font-serif text-2xl leading-none text-[var(--foreground)] sm:text-3xl">
             {item.role}

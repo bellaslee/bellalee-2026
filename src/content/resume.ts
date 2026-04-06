@@ -9,7 +9,6 @@ export type NavItem = {
 export type ExperienceItem = {
   id: string;
   company: string;
-  location: string;
   role: string;
   period: string;
   summary: string;
@@ -68,7 +67,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'west-monroe-consultant',
     company: 'West Monroe',
-    location: 'Seattle, WA',
     role: 'Technology Consultant',
     period: 'Sep. 2025 - Present',
     summary:
@@ -84,7 +82,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'uw-it',
     company: 'UW Information Technology',
-    location: 'Seattle, WA',
     role: 'Brand Strategy & Marketing Analyst',
     period: 'Oct. 2023 - Jun. 2024; Aug. 2024 - Jun. 2025',
     summary:
@@ -99,7 +96,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'smirk-president',
     company: 'Smirk UW',
-    location: 'Seattle, WA',
     role: 'President',
     period: 'May 2023 - Nov. 2024',
     summary:
@@ -116,7 +112,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'west-monroe-intern',
     company: 'West Monroe',
-    location: 'Seattle, WA',
     role: 'Technology Consulting Intern',
     period: 'Jun. 2024 - Aug. 2024',
     summary:
@@ -130,7 +125,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'seal-lab',
     company: 'Sensors, Energy, and Automation Laboratory',
-    location: 'Seattle, WA',
     role: 'Web Development Team Lead & UX Designer',
     period: 'Feb. 2022 - Aug. 2022',
     summary:
@@ -144,7 +138,6 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: 'freelance-illustrator',
     company: 'Independent Business',
-    location: 'Seattle, WA',
     role: 'Freelance Illustrator',
     period: 'Feb. 2022 - Sep. 2025',
     summary:
@@ -177,7 +170,7 @@ export const caseStudies: CaseStudyItem[] = [
 export const educationItems: EducationItem[] = [
   {
     title: 'BS in Informatics',
-    institution: 'University of Washington, Seattle, WA',
+    institution: 'University of Washington',
     period: 'Sep. 2021 - Jun. 2025',
     detail:
       'Studied user-centered design principles, user experience research methods, software development, product and information system management, and data analysis and visualization.',
