@@ -38,6 +38,7 @@ export type LearningTopic = {
   tag: string;
   current: string;
   next: string;
+  url?: string;
 };
 
 export const homeHeroContent: HomeHeroContent = {
@@ -89,6 +90,43 @@ export const learningTopicsSectionContent: SectionHeadingContent = {
   description: '',
 };
 
+export const learningTopics: LearningTopic[] = [
+  {
+    title: 'Pixel Sprites',
+    tag: 'Craft',
+    current: 'Practicing pixel art and animations in Aseprite.',
+    next: 'Character design and sprite sheets for a game project.',
+    url: 'https://garden.bellalee.com/notes/pixel-art',
+  },
+  {
+    title: 'Salesforce Administration and Development',
+    tag: 'Career',
+    current:
+      'Building fluency in configuration, data models, and platform syntax.',
+    next: 'Work through deeper implementation patterns and exam prep.',
+  },
+  {
+    title: 'Product Management',
+    tag: 'Career',
+    current: 'Honing my discovery, design, and build skills.',
+    next: 'Turn product thinking into reusable planning and scoping frameworks.',
+  },
+  {
+    title: 'Marathi',
+    tag: 'Language',
+    current:
+      'Learning the alphabet and using basic Hindi as an accessible entry point.',
+    next: 'Practice more vocabulary, grammar, and pronunciation.',
+  },
+  {
+    title: 'Bread-Baking',
+    tag: 'Craft',
+    current: 'Practicing technique through repeat bakes.',
+    next: 'Eat a lot of bread and document the recipes worth keeping.',
+    url: 'https://garden.bellalee.com/notes/Bread',
+  },
+];
+
 export const featureCards: HomeFeature[] = [
   {
     title: 'Interactive Resume',
@@ -115,34 +153,5 @@ export const featureCards: HomeFeature[] = [
     ctaLabel: 'Step inside',
     emphasis: 'standard',
     surface: 'muted',
-  },
-];
-
-export const learningTopics: LearningTopic[] = [
-  {
-    title: 'Salesforce Administration and Development',
-    tag: 'Career',
-    current:
-      'Building fluency in configuration, data models, and platform syntax.',
-    next: 'Work through deeper implementation patterns and exam prep.',
-  },
-  {
-    title: 'Product Management',
-    tag: 'Career',
-    current: 'Honing my discovery, design, and build skills.',
-    next: 'Turn product thinking into reusable planning and scoping frameworks.',
-  },
-  {
-    title: 'Marathi',
-    tag: 'Language',
-    current:
-      'Learning the alphabet and using basic Hindi as an accessible entry point.',
-    next: 'Practice more vocabulary, grammar, and pronunciation.',
-  },
-  {
-    title: 'Bread-Baking',
-    tag: 'Craft',
-    current: 'Practicing technique through repeat bakes.',
-    next: 'Eat a lot of bread and document the recipes worth keeping.',
   },
 ];

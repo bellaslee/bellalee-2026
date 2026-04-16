@@ -202,6 +202,18 @@ function LearningTopicCard({ topic }: { topic: LearningTopic }) {
           </dd>
         </div>
       </dl>
+      {topic.url ? (
+        <p className="mt-6">
+          <Link
+            href={topic.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-full border border-[color:var(--border)] bg-white/60 px-5 py-2.5 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-white"
+          >
+            Notes in the garden
+          </Link>
+        </p>
+      ) : null}
     </SurfacePanel>
   );
 }
