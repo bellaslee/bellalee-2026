@@ -123,7 +123,7 @@ export const learningTopics: LearningTopic[] = [
     tag: 'Craft',
     current: 'Practicing technique through repeat bakes.',
     next: 'Eat a lot of bread and document the recipes worth keeping.',
-    url: 'https://garden.bellalee.com/notes/Bread',
+    url: 'https://garden.bellalee.com/notes/bread',
   },
 ];
 
