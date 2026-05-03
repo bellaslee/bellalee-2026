@@ -55,7 +55,7 @@ export const homeHeroContent: HomeHeroContent = {
     },
     {
       title: 'Approach',
-      body: "Heads down grindin', I guess.",
+      body: 'Slowly collecting and writing documentation based on recent personal projects.',
       surface: 'white',
     },
   ],
