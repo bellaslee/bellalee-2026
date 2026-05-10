@@ -14,7 +14,19 @@ const cormorantGaramond = Cormorant_Garamond({
   weight: ['400', '500', '600', '700'],
 });
 
+function getMetadataBaseUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) {
+    return explicit;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return 'http://localhost:3000';
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getMetadataBaseUrl()),
   title: 'Bella Lee',
   description:
     'Personal site for Bella Lee featuring projects, photos, sketchbook, and a digital garden.',

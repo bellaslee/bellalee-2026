@@ -8,6 +8,7 @@ import {
   getProjectPostSlugs,
   projectPostPageContent,
 } from '@/content/projects';
+import { ProjectCoverImage } from '../_components/project-cover-image';
 
 type ProjectPostPageProps = {
   params: Promise<{
@@ -42,9 +43,18 @@ export async function generateMetadata({
     };
   }
 
+  const { metadata } = post;
+
   return {
-    title: `${post.metadata.title} | Bella Lee`,
-    description: post.metadata.summary,
+    title: `${metadata.title} | Bella Lee`,
+    description: metadata.summary,
+    ...(metadata.coverImage
+      ? {
+          openGraph: {
+            images: [{ url: metadata.coverImage }],
+          },
+        }
+      : {}),
   };
 }
 
@@ -59,6 +69,9 @@ export default async function ProjectPostPage({
   }
 
   const { Content, metadata } = post;
+  const coverAlt =
+    metadata.coverImageAlt ??
+    `Visual preview for the project case study “${metadata.title}”.`;
 
   return (
     <SitePage footerClassName="mt-16">
@@ -68,6 +81,16 @@ export default async function ProjectPostPage({
         description={metadata.summary}
         asideEyebrow={projectPostPageContent.publishedLabel}
         asideDescription={formatPublishedDate(metadata.publishedAt)}
+        leading={
+          metadata.coverImage ? (
+            <ProjectCoverImage
+              variant="hero"
+              src={metadata.coverImage}
+              alt={coverAlt}
+              priority
+            />
+          ) : undefined
+        }
       />
 
       <section className="py-10">

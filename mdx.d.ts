@@ -7,6 +7,7 @@ declare module '*.mdx' {
     summary: string;
     publishedAt: string;
     coverImage?: string;
+    coverImageAlt?: string;
     role?: string;
     tags?: string[];
   };

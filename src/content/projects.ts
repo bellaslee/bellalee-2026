@@ -7,6 +7,7 @@ export type ProjectPostMetadata = {
   summary: string;
   publishedAt: string;
   coverImage?: string;
+  coverImageAlt?: string;
   role?: string;
   tags?: string[];
 };
