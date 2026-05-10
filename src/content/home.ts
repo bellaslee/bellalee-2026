@@ -57,8 +57,7 @@ export const identityPillarsHeading = 'Core focus areas';
 
 export const learningTopicsSectionContent: SectionHeadingContent = {
   eyebrow: 'Current Learning',
-  title:
-    'A snapshot of what I am focused on now and what I want to move into next.',
+  title: 'A snapshot of what I am currently focusing on.',
   description: '',
 };
 
@@ -71,6 +70,13 @@ export const learningTopics: LearningTopic[] = [
     url: 'https://garden.bellalee.com/notes/pixel-art',
   },
   {
+    title: 'Bread-Baking',
+    tag: 'Craft',
+    current: 'Practicing technique through repeat bakes.',
+    next: 'Eat a lot of bread and document the recipes worth keeping.',
+    url: 'https://garden.bellalee.com/notes/bread',
+  },
+  {
     title: 'Salesforce Administration and Development',
     tag: 'Career',
     current:
@@ -80,7 +86,7 @@ export const learningTopics: LearningTopic[] = [
   {
     title: 'Product Management',
     tag: 'Career',
-    current: 'Honing my discovery, design, and build skills.',
+    current: 'Practicing my discovery, design, and build skills.',
     next: 'Turn product thinking into reusable planning and scoping frameworks.',
   },
   {
@@ -89,13 +95,6 @@ export const learningTopics: LearningTopic[] = [
     current:
       'Learning the alphabet and using basic Hindi as an accessible entry point.',
     next: 'Practice more vocabulary, grammar, and pronunciation.',
-  },
-  {
-    title: 'Bread-Baking',
-    tag: 'Craft',
-    current: 'Practicing technique through repeat bakes.',
-    next: 'Eat a lot of bread and document the recipes worth keeping.',
-    url: 'https://garden.bellalee.com/notes/bread',
   },
 ];
 

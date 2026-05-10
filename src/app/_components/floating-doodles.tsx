@@ -259,7 +259,7 @@ export function FloatingDoodles({ assetCandidates }: FloatingDoodlesProps) {
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none fixed inset-0 overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
       aria-hidden="true"
     >
       {scene.map((item, index) => (
@@ -269,7 +269,7 @@ export function FloatingDoodles({ assetCandidates }: FloatingDoodlesProps) {
             itemRefs.current[index] = element;
           }}
           className={`absolute will-change-transform ${
-            item.depth === 'front' ? 'z-20' : 'z-0'
+            item.depth === 'front' ? 'z-[2]' : 'z-[1]'
           }`}
           style={{ opacity: item.opacity }}
         >
