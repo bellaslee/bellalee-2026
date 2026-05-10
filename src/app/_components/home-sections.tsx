@@ -9,7 +9,6 @@ import {
   learningTopics,
   type HomeAction,
   type HomeFeature,
-  type HeroDetail as HeroDetailContent,
   type LearningTopic,
 } from '@/content/home';
 import { SectionHeading } from './section-heading';
@@ -41,70 +40,20 @@ function HomeActionLink({ href, label, variant }: HomeAction) {
   );
 }
 
-function HeroDetail({
-  title,
-  body,
-  surface,
-}: HeroDetailContent) {
-  const surfaceClasses =
-    surface === 'surface' ? 'bg-[var(--surface)]/90' : 'bg-white/85';
-
-  return (
-    <div
-      className={`rounded-2xl border border-[color:var(--border)] p-4 ${surfaceClasses}`}
-    >
-      <p className="text-xs uppercase tracking-[0.2em] text-[var(--secondary)]">
-        {title}
-      </p>
-      <p className="mt-2 text-base leading-7 text-[var(--foreground)]">
-        {body}
-      </p>
-    </div>
-  );
-}
-
 export function HomeHeroSection() {
   return (
-    <section className="grid gap-10 pb-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pb-16">
-      <div className="max-w-3xl">
-        <h1 className="font-serif text-6xl leading-none text-[var(--foreground)] sm:text-7xl lg:text-[5rem]">
-          {homeHeroContent.title}
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
-          {homeHeroContent.description}
-        </p>
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          {homeActions.map((action) => (
-            <HomeActionLink key={action.href} {...action} />
-          ))}
-        </div>
+    <section className="max-w-3xl pb-10 lg:pb-16">
+      <h1 className="font-serif text-6xl leading-none text-[var(--foreground)] sm:text-7xl lg:text-[5rem]">
+        {homeHeroContent.title}
+      </h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)]">
+        {homeHeroContent.description}
+      </p>
+      <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+        {homeActions.map((action) => (
+          <HomeActionLink key={action.href} {...action} />
+        ))}
       </div>
-
-      <SurfacePanel
-        className="relative shadow-[0_30px_80px_rgba(33,53,72,0.08)]"
-        variant="white"
-        padding="spacious"
-      >
-        <div
-          className="ornament absolute inset-0 opacity-25"
-          aria-hidden="true"
-        />
-        <div className="space-y-6">
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-[var(--secondary)]">
-              {homeHeroContent.currentlyExploringLabel}
-            </p>
-            <h2 className="mt-3 font-serif text-4xl leading-tight text-[var(--foreground)]">
-              {homeHeroContent.currentlyExploringTitle}
-            </h2>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {homeHeroContent.details.map((detail) => (
-              <HeroDetail key={detail.title} {...detail} />
-            ))}
-          </div>
-        </div>
-      </SurfacePanel>
     </section>
   );
 }

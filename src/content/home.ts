@@ -4,18 +4,9 @@ export type HomeAction = {
   variant: 'primary' | 'secondary';
 };
 
-export type HeroDetail = {
-  title: string;
-  body: string;
-  surface: 'surface' | 'white';
-};
-
 export type HomeHeroContent = {
   title: string;
   description: string;
-  currentlyExploringLabel: string;
-  currentlyExploringTitle: string;
-  details: HeroDetail[];
 };
 
 export type SectionHeadingContent = {
@@ -45,32 +36,13 @@ export const homeHeroContent: HomeHeroContent = {
   title: "Hi, I'm Bella!",
   description:
     'I am a consultant, artist, writer, and lifelong learner. This site is a place for the projects, photos, and ongoing learning that matter to me.',
-  currentlyExploringLabel: 'Currently Working On',
-  currentlyExploringTitle: 'Adding project documentation',
-  details: [
-    {
-      title: 'Context',
-      body: "I've got most of my website architecture built out, so all that's left is to add more content.",
-      surface: 'surface',
-    },
-    {
-      title: 'Approach',
-      body: 'Slowly collecting and writing documentation based on recent personal projects.',
-      surface: 'white',
-    },
-  ],
 };
 
 export const homeActions: HomeAction[] = [
   {
-    href: '/resume',
-    label: 'View Resume',
-    variant: 'primary',
-  },
-  {
     href: '/projects',
     label: 'Explore Projects',
-    variant: 'secondary',
+    variant: 'primary',
   },
 ];
 
@@ -129,12 +101,13 @@ export const learningTopics: LearningTopic[] = [
 
 export const featureCards: HomeFeature[] = [
   {
-    title: 'Interactive Resume',
-    description: 'A structured view of the work I do.',
-    href: '/resume',
-    ctaLabel: 'Learn more',
+    title: 'Digital Garden',
+    description:
+      'A living notebook of technical explorations, reflections, and unfinished thinking.',
+    href: 'https://garden.bellalee.com',
+    ctaLabel: 'Step inside',
     emphasis: 'standard',
-    surface: 'surface',
+    surface: 'muted',
   },
   {
     title: 'Photo Diary',
@@ -146,12 +119,11 @@ export const featureCards: HomeFeature[] = [
     surface: 'white',
   },
   {
-    title: 'Digital Garden',
-    description:
-      'A living notebook of technical explorations, reflections, and unfinished thinking.',
-    href: 'https://garden.bellalee.com',
-    ctaLabel: 'Step inside',
+    title: 'Sketchbook',
+    description: 'A collection of recent (and all-time favorite) pieces.',
+    href: '/art',
+    ctaLabel: 'Open sketchbook',
     emphasis: 'standard',
-    surface: 'muted',
+    surface: 'surface',
   },
 ];
